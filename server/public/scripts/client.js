@@ -15,6 +15,34 @@ myApp.config(['$routeProvider', '$locationProvider', function($routeProvider, $l
       templateUrl: '/views/templates/register.html',
       controller: 'LoginController as vm'
     })
+    .when('/property', {
+      templateUrl: '/views/templates/property.html',
+      controller: 'PropertyController as vm'
+    })
+    .when('/add_property', {
+      templateUrl: '/views/templates/addProperty.html',
+      controller: 'AddPropertyController as vm'
+    })
+    .when('/chore', {
+      templateUrl: '/views/templates/chore.html',
+      controller: 'ChoreController as vm'
+    })
+    .when('/about', {
+      templateUrl: '/views/templates/about.html',
+      controller: 'AboutController as vm'
+    })
+    .when('/calendar', {
+      templateUrl: '/views/templates/calendar.html',
+      controller: 'CalendarController as vm'
+    })
+    .when('/opening_list', {
+      templateUrl: '/views/templates/opening_list.html',
+      controller: 'Opening_ListController as vm'
+    })
+    .when('/closing_list', {
+      templateUrl: '/views/templates/closing_list.html',
+      controller: 'Closing_ListController as vm'
+    })
     .when('/user', {
       templateUrl: '/views/templates/user.html',
       controller: 'UserController as vm',
