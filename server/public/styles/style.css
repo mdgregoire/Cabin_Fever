@@ -16,6 +16,11 @@ body, html {
   padding: 15px;
 }
 
+.boxed{
+  border: 1px solid green;
+  width: 200px;
+}
+
 #entryForm {
   margin-top: 14px;
 }
@@ -75,6 +80,18 @@ li a {
 
 /* Change the link color to #111 (black) on hover */
 li a:hover {
+  text-decoration: underline;
+  color: #eee;
+}
+
+a {
+  display: block;
+  color: black;
+  text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+a:hover {
   text-decoration: underline;
   color: #eee;
 }

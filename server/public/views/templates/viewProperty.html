@@ -1,0 +1,17 @@
+<div ng-include="'views/partials/nav.html'"></div>
+<div class="container">
+  <p>
+    In Property
+  </p>
+
+<div>
+  <ul ng-repeat = "cabin in vm.cabins.array">
+    <li>
+      name: {{cabin.property_name}}
+    </li>
+    <li>
+      <img ng-src="{{cabin.property_picture}}" width="100px" ng-click="vm.displayProperty(cabin.id)"/>
+    </li>
+  </ul>
+  </div>
+</div>

@@ -15,13 +15,22 @@ myApp.config(['$routeProvider', '$locationProvider', function($routeProvider, $l
       templateUrl: '/views/templates/register.html',
       controller: 'LoginController as vm'
     })
-    .when('/property', {
-      templateUrl: '/views/templates/property.html',
-      controller: 'PropertyController as vm'
+    .when('/view_property', {
+      templateUrl: '/views/templates/viewProperty.html',
+      controller: 'PropertyController as vm',
+      resolve: {
+        getuser : function(UserService){
+          return UserService.getuser();
+        }
+      }
     })
     .when('/add_property', {
       templateUrl: '/views/templates/addProperty.html',
       controller: 'AddPropertyController as vm'
+    })
+    .when('/property', {
+      templateUrl: '/views/templates/property.html',
+      controller: 'PropertyController as vm'
     })
     .when('/chore', {
       templateUrl: '/views/templates/chore.html',
@@ -44,7 +53,7 @@ myApp.config(['$routeProvider', '$locationProvider', function($routeProvider, $l
       controller: 'Closing_ListController as vm'
     })
     .when('/user', {
-      templateUrl: '/views/templates/user.html',
+      templateUrl: '/views/templates/viewProperty.html',
       controller: 'UserController as vm',
       resolve: {
         getuser : function(UserService){

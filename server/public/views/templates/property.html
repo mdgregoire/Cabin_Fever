@@ -1,16 +1,24 @@
 <div ng-include="'views/partials/nav.html'"></div>
 <div class="container">
   <p>
-    In Property
+    In single Property view
   </p>
-
-<div>
-  <ul>
-    <li ng-repeat = "cabin in vm.cabins.array">
-    name: {{cabin.property_name}}
-    <img ng-src="{{cabin.property_picture}}" width="100px"/>
-  </li>
-  </ul>
+  <div>
+    <p>Name:{{vm.displayCabin.cabin[0].property_name}}</p>
+    <img ng-src="{{vm.displayCabin.cabin[0].property_picture}}" width="300px"/>
   </div>
-
+</div>
+<div class = 'boxed'>
+  <div class = 'boxed'>
+    <p><a href="#!property">Start Visit</a></p>
+  </div>
+  <div class = 'boxed'>
+    <p><a href="#!chore">Chores</a></p>
+  </div>
+  <div class = 'boxed'>
+    <p><a href="#!opening_list">Open/Close Cabin</a></p>
+  </div>
+  <div class = 'boxed'>
+    <p><a href="#!calendar">Book Visit</a></p>
+  </div>
 </div>

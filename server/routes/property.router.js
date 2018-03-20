@@ -19,7 +19,7 @@ router.post('/', (request, response) => {
 //end POST
 
 router.get('/:id', (request, response) => {
-  console.log('in get', request.params.id);
+  console.log('in get all', request.params.id);
   pool.query('SELECT * FROM properties WHERE owner_id = $1;', [request.params.id])
   .then((result) => {
     console.log('success in get', result);
@@ -31,6 +31,20 @@ router.get('/:id', (request, response) => {
   })
 });
 //end getCabins
+
+router.get('/display/:id', (request, response) => {
+  console.log('in get single', request.params.id);
+  pool.query('SELECT * FROM properties WHERE id = $1;', [request.params.id])
+  .then((result) => {
+    console.log('success in get', result);
+    response.send(result);
+  })
+  .catch((err) => {
+    console.log('error in get', err);
+    response.sendStatus(500);
+  })
+});
+//end getCabin for display
 
 
 module.exports = router;
