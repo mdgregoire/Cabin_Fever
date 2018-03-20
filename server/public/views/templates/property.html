@@ -3,4 +3,14 @@
   <p>
     In Property
   </p>
+
+<div>
+  <ul>
+    <li ng-repeat = "cabin in vm.cabins.array">
+    name: {{cabin.property_name}}
+    <img ng-src="{{cabin.property_picture}}" width="100px"/>
+  </li>
+  </ul>
+  </div>
+
 </div>

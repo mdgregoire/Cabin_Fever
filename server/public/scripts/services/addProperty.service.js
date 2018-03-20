@@ -1,6 +1,6 @@
 myApp.service('AddPropertyService', ['$http', '$location', function($http, $location){
   console.log('AddPropertyService Loaded');
-  var self = this;
+  let self = this;
   self.newProperty = {};
   self.client = filestack.init("ASYgNuRdqTkmiELkrSnfIz");
 

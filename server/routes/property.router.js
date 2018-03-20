@@ -18,9 +18,19 @@ router.post('/', (request, response) => {
 });
 //end POST
 
-
-
-
+router.get('/:id', (request, response) => {
+  console.log('in get', request.params.id);
+  pool.query('SELECT * FROM properties WHERE owner_id = $1;', [request.params.id])
+  .then((result) => {
+    console.log('success in get', result);
+    response.send(result);
+  })
+  .catch((err) => {
+    console.log('error in get', err);
+    response.sendStatus(500);
+  })
+});
+//end getCabins
 
 
 module.exports = router;
