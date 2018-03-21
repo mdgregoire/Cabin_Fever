@@ -8,7 +8,7 @@ myApp.controller('PropertyController', ['UserService', 'ViewPropertyService', fu
   self.cabins = ViewPropertyService.cabins;
 
   self.getCabins = ViewPropertyService.getCabins;
-  console.log(self.userObject, 'uObj in PropertyController');
+  console.log( self.userObject, 'uObj in PropertyController');
   self.getCabins(self.userObject.id);
 
   self.displayProperty = ViewPropertyService.displayProperty;

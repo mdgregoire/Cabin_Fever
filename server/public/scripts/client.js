@@ -54,7 +54,7 @@ myApp.config(['$routeProvider', '$locationProvider', function($routeProvider, $l
     })
     .when('/user', {
       templateUrl: '/views/templates/viewProperty.html',
-      controller: 'UserController as vm',
+      controller: 'PropertyController as vm',
       resolve: {
         getuser : function(UserService){
           return UserService.getuser();

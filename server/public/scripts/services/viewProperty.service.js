@@ -4,10 +4,8 @@ myApp.service('ViewPropertyService', ['$http', '$location', function($http, $loc
   self.cabins = {};
   self.displayCabin = {};
 
-  console.log(self.cabins, 'user id in ViewPropertyService');
-  console.log(self);
 
-
+//this gets the information for the selected property
   self.displayProperty = function (id){
     console.log('in display property', id);
     $location.url('/property');
@@ -24,6 +22,7 @@ myApp.service('ViewPropertyService', ['$http', '$location', function($http, $loc
   }
   //end display property
 
+//this gets all properties owned by the logged in user
 self.getCabins = function (id) {
   console.log('in getCabins', id);
   $http({

@@ -1,10 +1,14 @@
 <div class="navbar">
-  <div class="container">
+  <div class="container" ng-show="vm.userObject.userName" >
     <ul>
       <li><a href="#!user">Home</a></li>
       <li><a href="#!add_property">Add Property</a></li>
       <li><a href="#!about">about Page</a></li>
       <li><a href="#!view_property">property Page</a></li>
+
+      <p id="welcome" class="lead">Welcome, {{vm.userObject.userName}}!</p>
+      <button class="btn btn-default" ng-click="vm.userService.logout()">Log Out</button>
+
     </ul>
   </div>
 </div>

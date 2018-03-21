@@ -21,6 +21,10 @@ body, html {
   width: 200px;
 }
 
+.welcome{
+  color: white;
+}
+
 #entryForm {
   margin-top: 14px;
 }

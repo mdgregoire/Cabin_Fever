@@ -6,6 +6,7 @@ myApp.service('AddPropertyService', ['$http', '$location', function($http, $loca
 
 
   //Filestack API method 'pick()' that opens the file picker
+  //uploads a photo to the DB
   self.upload = function(){
     console.log('in upload');
     self.client.pick({
@@ -20,6 +21,7 @@ myApp.service('AddPropertyService', ['$http', '$location', function($http, $loca
 }
 //end filestack
 
+//this adds a property to the DB
 self.addProperty = function(newProperty){
   console.log('in add property');
   console.log(newProperty);
