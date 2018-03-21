@@ -1,0 +1,11 @@
+task_name,task_notes,op_cl,property_name
+put dock in water,use the tool,open,cabin
+turn on water,check lake pump housing,open,cabin
+open sauna,clean mouse poop,open,cabin
+hang flag,in garage,open,cabin
+prime main pump,small pot,open,cabin
+pull dock out of water,use the tool,close,cabin
+turn off water,blow it out of the cabin,close,cabin
+take trash home,it'll smell,close,cabin
+empty fridge,eat the food,close,cabin
+lock doors,duh,close,cabin

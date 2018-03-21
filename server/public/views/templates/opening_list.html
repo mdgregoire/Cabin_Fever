@@ -3,6 +3,22 @@
   <p>
     In openingList
   </p>
+  <div ng-include=" 'views/partials/selectedCabin.html'"></div>
+
   <div ng-include="'views/partials/actions.html'"></div>
 
+  <div>
+  <h4>Upload on file select</h4>
+  <button type="file" ngf-select="vm.uploadFiles($file, $invalidFiles)"
+          accept=".csv" ngf-max-size="100MB">
+      Select File</button>
+  <br><br>
+  File:
+  <div style="font:smaller">{{vm.f.name}} {{vm.errFile.name}} {{vm.errFile.$error}} {{vm.errFile.$errorParam}}
+      <span class="progress" ng-show="vm.f.progress >= 0">
+          <div style="width:{{vm.f.progress}}%"
+               ng-bind="vm.f.progress + '%'"></div>
+      </span>
+  </div>
+  {{errorMsg}}
 </div>

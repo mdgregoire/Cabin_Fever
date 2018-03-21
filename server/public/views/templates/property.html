@@ -3,10 +3,6 @@
   <p>
     In single Property view
   </p>
-  <div>
-    <p>Name:{{vm.displayCabin.cabin[0].property_name}}</p>
-    <img ng-src="{{vm.displayCabin.cabin[0].property_picture}}" width="300px"/>
-  </div>
   <div ng-include="'views/partials/actions.html'"></div>
-
+<div ng-include=" 'views/partials/selectedCabin.html'"></div>
 </div>
