@@ -7,18 +7,18 @@ myApp.controller('Opening_ListController',  ['UserService', 'ViewPropertyService
 
   self.displayProperty = ViewPropertyService.displayProperty;
   self.displayCabin = ViewPropertyService.displayCabin;
-
-
+  let cabinId = self.displayCabin.cabin[0].id;
+  console.log(cabinId, 'cabin in ol cont');
 
 
 
       self.uploadFiles = function(file, errFiles) {
-        console.log(file, 'file in uploadFiles');
+
           self.f = file;
           self.errFile = errFiles && errFiles[0];
           if (file) {
               file.upload = Upload.upload({
-                  url: '/upload',
+                  url: `/upload/${cabinId}`,
                   data: {file: file}
               });
 
