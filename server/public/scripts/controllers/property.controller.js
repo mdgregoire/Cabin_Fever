@@ -4,14 +4,18 @@ myApp.controller('PropertyController', ['UserService', 'ViewPropertyService', fu
 
   self.userService = UserService;
   self.userObject = UserService.userObject;
+  ViewPropertyService.userId = self.userObject.id;
 
   self.cabins = ViewPropertyService.cabins;
 
   self.getCabins = ViewPropertyService.getCabins;
-  console.log( self.userObject, 'uObj in PropertyController');
   self.getCabins(self.userObject.id);
 
   self.displayProperty = ViewPropertyService.displayProperty;
   self.displayCabin = ViewPropertyService.displayCabin;
+
+  self.deleteCabin = ViewPropertyService.deleteCabin;
+  self.showEditCabin = ViewPropertyService.showEditCabin;
+  self.editProperty = ViewPropertyService.editCabin;
 
 }]);

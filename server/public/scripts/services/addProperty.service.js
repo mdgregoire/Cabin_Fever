@@ -31,6 +31,7 @@ self.addProperty = function(newProperty){
     data: newProperty
   }).then(function (response){
     console.log('success in post', response);
+    $location.path("/user");
   }).catch(function(error){
     console.log('error in post', error);
   })

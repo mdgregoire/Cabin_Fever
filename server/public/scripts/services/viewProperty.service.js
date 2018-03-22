@@ -3,7 +3,7 @@ myApp.service('ViewPropertyService', ['$http', '$location', function($http, $loc
   let self = this;
   self.cabins = {};
   self.displayCabin = {};
-
+  self.userId = '';
 
 //this gets the information for the selected property
   self.displayProperty = function (id){
@@ -37,6 +37,53 @@ self.getCabins = function (id) {
 }
 //end property get
 
+//this deletes the selected cabin from the db
+self.deleteCabin = function(id){
+  console.log('in deleteCabin', id);
+  $http({
+    method: 'DELETE',
+    url: `/property/${id}`
+  }).then(function(response){
+    console.log('success in cabin delete', response);
+    self.getCabins(self.userId);
+  }).catch(function(error){
+    console.log('error in delete property', error);
+  })
+}
+//end deleteCabin
+
+//this function updates the is_edit field in the db
+self.showEditCabin = function (id, edit){
+  console.log('in editCabin', id, edit);
+  $http({
+    method: 'PUT',
+    url: `/property/showEdit/${id}`,
+    data: {edit: edit}
+  }).then(function(response){
+    console.log('success in show edit', response);
+    self.getCabins(self.userId);
+  }).catch(function(error){
+    console.log('error in show edit', error);
+  })
+}
+//end showEditCabin
+
+self.editCabin = function (cabinToEdit) {
+  console.log('in edit cabin', cabinToEdit);
+  let id = cabinToEdit.id
+  $http({
+    method: 'PUT',
+    url: `/property/edit/${id}`,
+    data: cabinToEdit
+  }).then(function(response){
+    console.log('success in edit', response);
+    self.showEditCabin(id, true);
+    self.getCabins(self.userId);
+  }).catch(function(error){
+    console.log('error in edit', error);
+  })
+}
+//end editCabin
 
 
 }]);//end service
