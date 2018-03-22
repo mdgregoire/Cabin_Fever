@@ -10,6 +10,11 @@ myApp.controller('Opening_ListController',  ['UserService', 'ViewPropertyService
   let cabinId = self.displayCabin.cabin[0].id;
   self.showUpload = {show: false};
 
+
+
+
+
+
   self.uploadFiles = function(file, errFiles) {
     self.f = file;
     self.errFile = errFiles && errFiles[0];
@@ -40,6 +45,10 @@ self.uploadToggle = function(){
   self.showUpload.show = true;
 }
 
+self.cancelUpload = function(){
+  console.log('in cancel upload');
+  self.showUpload.show = false;
+}
 
 
 }]);

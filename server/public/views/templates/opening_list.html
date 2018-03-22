@@ -8,6 +8,7 @@
   <div ng-include="'views/partials/actions.html'"></div>
 
 <button ng-click="vm.uploadToggle()" >Upload File?</button>
+<button ng-click="vm.cancelUpload()" >Cancel</button>
 
   <div ng-show="vm.showUpload.show" class="upload">
     <div>
@@ -24,5 +25,18 @@
         </span>
     </div>
     {{errorMsg}}
+  </div>
+
+  <div class="list">
+    <ul>
+      <li ng-repeat="task in list" ng-init="tooltip=false">
+        <input id=taskList type="checkbox" name="task.id">
+        <label for="task.id" ng-mouseover="tooltip=true" ng-mouseleave="tooltip=false" >{{task.task_name}}</label>
+        <div class="tooltip" ng-show="tooltip">
+          <p>{{task.task_notes}}</p>
+        </div>
+      </li>
+    </ul>
+
   </div>
 </div>
