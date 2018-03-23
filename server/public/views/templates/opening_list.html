@@ -3,6 +3,22 @@
   <p>
     In openingList
   </p>
+  <!-- <p>
+    {{vm.list.task_name}}
+  </p> -->
+
+  <div class="list" ng-init="tooltip=false">
+    <ul ng-repeat="task in vm.list">
+      <li>
+        <p ng-mouseover="tooltip=true" ng-mouseleave="tooltip=false">{{task.task_name}}</p>
+        <div class="tooltip" ng-show="tooltip">{{task.task_notes}}</div>
+      </li>
+    </ul>
+
+
+  </div>
+
+
   <div ng-include=" 'views/partials/selectedCabin.html'"></div>
 
   <div ng-include="'views/partials/actions.html'"></div>
@@ -27,16 +43,4 @@
     {{errorMsg}}
   </div>
 
-  <div class="list">
-    <ul>
-      <li ng-repeat="task in list" ng-init="tooltip=false">
-        <input id=taskList type="checkbox" name="task.id">
-        <label for="task.id" ng-mouseover="tooltip=true" ng-mouseleave="tooltip=false" >{{task.task_name}}</label>
-        <div class="tooltip" ng-show="tooltip">
-          <p>{{task.task_notes}}</p>
-        </div>
-      </li>
-    </ul>
-
-  </div>
 </div>

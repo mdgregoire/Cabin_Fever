@@ -1,18 +1,19 @@
-myApp.controller('Opening_ListController',  ['UserService', 'ViewPropertyService','Upload', '$timeout',
-  function(UserService, ViewPropertyService, Upload, $timeout) {
+myApp.controller('Opening_ListController',  ['UserService', 'ViewPropertyService', 'ListService', 'Upload', '$timeout',
+  function(UserService, ViewPropertyService, ListService, Upload, $timeout) {
   console.log('Opening_ListController created');
   var self = this;
+
   self.userService = UserService;
   self.userObject = UserService.userObject;
-  self.list = ListService.list;
+
+  self.ListService = ListService;
+  self.list = ListService.list.test;
+  console.log(self.list, 'list, in controller');
+
   self.displayProperty = ViewPropertyService.displayProperty;
   self.displayCabin = ViewPropertyService.displayCabin;
   let cabinId = self.displayCabin.cabin[0].id;
   self.showUpload = {show: false};
-
-
-
-
 
 
   self.uploadFiles = function(file, errFiles) {
