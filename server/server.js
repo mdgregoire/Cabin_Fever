@@ -9,6 +9,7 @@ const sessionConfig = require('./modules/session-middleware');
 const userRouter = require('./routes/user.router');
 const propertyRouter = require('./routes/property.router');
 const uploadRouter = require('./routes/upload.router');
+const listRouter = require('./routes/list.router')
 
 
 // Body parser middleware
@@ -26,6 +27,7 @@ app.use(passport.session());
 app.use('/api/user', userRouter);
 app.use('/property', propertyRouter);
 app.use('/upload', uploadRouter);
+app.use('/list', listRouter);
 
 // Serve static files
 app.use(express.static('server/public'));

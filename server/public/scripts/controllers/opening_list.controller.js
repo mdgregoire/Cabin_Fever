@@ -6,13 +6,16 @@ myApp.controller('Opening_ListController',  ['UserService', 'ViewPropertyService
   self.userService = UserService;
   self.userObject = UserService.userObject;
 
-  self.ListService = ListService;
-  self.list = ListService.list.test;
-  console.log(self.list, 'list, in controller');
-
   self.displayProperty = ViewPropertyService.displayProperty;
   self.displayCabin = ViewPropertyService.displayCabin;
   let cabinId = self.displayCabin.cabin[0].id;
+
+  self.ListService = ListService;
+  self.list = ListService.list;
+  self.getList = ListService.getList
+  self.getList(cabinId);
+  console.log(self.list, 'list, in controller');
+
   self.showUpload = {show: false};
 
 
