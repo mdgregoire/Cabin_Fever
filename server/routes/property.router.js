@@ -106,5 +106,24 @@ router.put('/edit/:id', (request, response) => {
 })
 //end edit
 
+router.put('/toggle/:id', (request, response) => {
+  console.log('in toggle op_cl', request.params.id, request.body);
+  let op_cl = ''
+  if (request.body.data == 'close'){
+    op_cl = 'open'
+  } else {
+    op_cl = 'close'
+  }
+  pool.query('UPDATE properties SET op_cl = $1 WHERE id = $2', [op_cl, request.params.id])
+  .then((result) => {
+    console.log('success in toggle', result);
+    response.sendStatus(200);
+  })
+  .catch ((err) => {
+    console.log('error in toggle', err);
+    response.sendStatus(500);
+  })
+})
+//end toggle
 
 module.exports = router;

@@ -13,6 +13,7 @@
   </div>
   <button>Placeholder: Mark Completed</button>
   <button>Placeholder: Clear List</button>
+  <button ng-click="vm.op_clToggle(vm.displayCabin.cabin[0].id, vm.cabinOpenState)">Toggle Open/Closed</button>
   <div ng-include="'views/partials/actions.html'"></div>
 
 <button ng-click="vm.uploadToggle()" >Upload File?</button>

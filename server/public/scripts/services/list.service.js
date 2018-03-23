@@ -18,11 +18,7 @@ self.getList = function (id) {
     console.log('error in get list', error);
   })
 }
-//end property get
-
-
-
-
+//end list get
 
 
 }]);//end service

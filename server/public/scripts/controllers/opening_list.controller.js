@@ -1,23 +1,42 @@
-myApp.controller('Opening_ListController',  ['UserService', 'ViewPropertyService', 'ListService', 'Upload', '$timeout', '$location',
-  function(UserService, ViewPropertyService, ListService, Upload, $timeout, $location) {
+myApp.controller('Opening_ListController',  ['UserService', 'ViewPropertyService', 'ListService', 'Upload', '$timeout', '$location', '$http',
+  function(UserService, ViewPropertyService, ListService, Upload, $timeout, $location, $http) {
   console.log('Opening_ListController created');
   var self = this;
 
   self.userService = UserService;
   self.userObject = UserService.userObject;
-
   self.displayProperty = ViewPropertyService.displayProperty;
   self.displayCabin = ViewPropertyService.displayCabin;
+
   let cabinId = self.displayCabin.cabin[0].id;
   self.cabinOpenState = self.displayCabin.cabin[0].op_cl;
+
+  self.op_clToggle = ListService.op_clToggle;
 
   self.ListService = ListService;
   self.list = ListService.list;
   self.getList = ListService.getList
   self.getList(cabinId);
-  console.log(self.list, 'list, in controller');
 
   self.showUpload = {show: false};
+
+
+  self.op_clToggle = function(id, op_cl) {
+    console.log('in op_clToggle', id, op_cl);
+    $http({
+      method: 'PUT',
+      url: `property/toggle/${id}`,
+      data: {data: op_cl}
+    }).then(function(response){
+      console.log('success in op_clToggle', response);
+      ViewPropertyService.displayProperty(cabinId)
+    }).catch(function(error){
+      console.log('error in op_clToggle', error);
+    })
+  }
+  //end op_clToggle
+
+
 
 
   self.uploadFiles = function(file, errFiles) {
