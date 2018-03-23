@@ -4,7 +4,7 @@ myApp.controller('Opening_ListController',  ['UserService', 'ViewPropertyService
   var self = this;
   self.userService = UserService;
   self.userObject = UserService.userObject;
-
+  self.list = ListService.list;
   self.displayProperty = ViewPropertyService.displayProperty;
   self.displayCabin = ViewPropertyService.displayCabin;
   let cabinId = self.displayCabin.cabin[0].id;
