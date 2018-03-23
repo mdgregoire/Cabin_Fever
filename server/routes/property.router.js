@@ -20,7 +20,7 @@ router.post('/', (request, response) => {
 
 router.get('/:id', (request, response) => {
   console.log('in get all', request.params.id);
-  pool.query('SELECT * FROM properties WHERE owner_id = $1 ORDER BY id;', [request.params.id])
+  pool.query('SELECT * FROM properties WHERE owner_id = $1 ORDER BY id;', [request.user.id])
   .then((result) => {
     console.log('success in get', result);
     response.send(result);
@@ -46,8 +46,12 @@ router.get('/display/:id', (request, response) => {
 });
 //end getCabin for display
 
+
+
+
 router.delete('/:id', (request, response) => {
   console.log('in delete cabin route', request.params.id);
+  if(request.isAuthenticated()){
   pool.query('DELETE FROM properties WHERE id = $1;', [request.params.id])
   .then((result) => {
     console.log('success in delete', result);
@@ -57,8 +61,16 @@ router.delete('/:id', (request, response) => {
     console.log('error in delete', err);
     response.sendStatus(500);
   })
+}//end if
+else{
+  res.sendStatus(403);
+
+}
 });
 //end deleteCabin
+
+
+
 
 router.put('/showEdit/:id', (request, response) => {
   let is_edit = '';

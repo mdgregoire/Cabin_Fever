@@ -53,8 +53,8 @@ myApp.config(['$routeProvider', '$locationProvider', function($routeProvider, $l
       controller: 'Closing_ListController as vm'
     })
     .when('/user', {
-      templateUrl: '/views/templates/user.html',
-      controller: 'UserController as vm',
+      templateUrl: '/views/templates/viewProperty.html',
+      controller: 'PropertyController as vm',
       resolve: {
         getuser : function(UserService){
           return UserService.getuser();

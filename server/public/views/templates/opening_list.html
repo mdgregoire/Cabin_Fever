@@ -1,9 +1,10 @@
 <div ng-include="'views/partials/nav.html'"></div>
 <div class="container" ng-show="vm.userObject.userName">
+  <div ng-include=" 'views/partials/selectedCabin.html'"></div>
 
   <div class="list" ng-init="tooltip=false">
     <ul ng-repeat="task in vm.list.array">
-      <li ng-mouseover="tooltip=true" ng-mouseleave="tooltip=false">
+      <li ng-hide="'{{vm.cabinOpenState}}' == '{{task.op_cl}}'" ng-mouseover="tooltip=true" ng-mouseleave="tooltip=false">
         <input type="checkbox" id="taskList" name="task.task_name" value="completed">
         <label for ="task.task_name" >{{task.task_name}}</label>
         <div class="tooltip" ng-show="tooltip">{{task.task_notes}}</div>
@@ -12,9 +13,6 @@
   </div>
   <button>Placeholder: Mark Completed</button>
   <button>Placeholder: Clear List</button>
-
-  <div ng-include=" 'views/partials/selectedCabin.html'"></div>
-
   <div ng-include="'views/partials/actions.html'"></div>
 
 <button ng-click="vm.uploadToggle()" >Upload File?</button>

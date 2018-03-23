@@ -1,5 +1,5 @@
-myApp.controller('Opening_ListController',  ['UserService', 'ViewPropertyService', 'ListService', 'Upload', '$timeout',
-  function(UserService, ViewPropertyService, ListService, Upload, $timeout) {
+myApp.controller('Opening_ListController',  ['UserService', 'ViewPropertyService', 'ListService', 'Upload', '$timeout', '$location',
+  function(UserService, ViewPropertyService, ListService, Upload, $timeout, $location) {
   console.log('Opening_ListController created');
   var self = this;
 
@@ -9,6 +9,7 @@ myApp.controller('Opening_ListController',  ['UserService', 'ViewPropertyService
   self.displayProperty = ViewPropertyService.displayProperty;
   self.displayCabin = ViewPropertyService.displayCabin;
   let cabinId = self.displayCabin.cabin[0].id;
+  self.cabinOpenState = self.displayCabin.cabin[0].op_cl;
 
   self.ListService = ListService;
   self.list = ListService.list;
@@ -41,6 +42,7 @@ myApp.controller('Opening_ListController',  ['UserService', 'ViewPropertyService
     }
     alert('File Uploaded!');
     self.showUpload.show = false;
+    $location.path("/property");
   }
 //end uploadFiles
 
