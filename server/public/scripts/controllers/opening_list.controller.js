@@ -38,7 +38,7 @@ myApp.controller('Opening_ListController',  ['UserService', 'ViewPropertyService
 
 
 
-
+//this uploads the .csv file to the db
   self.uploadFiles = function(file, errFiles) {
     self.f = file;
     self.errFile = errFiles && errFiles[0];
