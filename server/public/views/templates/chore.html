@@ -3,6 +3,18 @@
   <p>
     In Chore
   </p>
+  <div ng-include=" 'views/partials/selectedCabin.html'"></div>
   <div ng-include="'views/partials/actions.html'"></div>
+
+  <div class="choreBox">
+    <ul ng-repeat="chore in vm.chore.array">
+        <li ><p>{{chore.chore_name}}</p></li>
+        <li><p>{{chore.chore_notes}}</p></li>
+        <li><button ng-click="vm.completeChore(chore.id)">completeChore</button></li>
+    </ul>
+    <button ng-click="vm.addChore()">Add Chore</button>
+  </div>
+
+
 
 </div>

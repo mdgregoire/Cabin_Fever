@@ -10,6 +10,7 @@ const userRouter = require('./routes/user.router');
 const propertyRouter = require('./routes/property.router');
 const uploadRouter = require('./routes/upload.router');
 const listRouter = require('./routes/list.router')
+const choreRouter = require('./routes/chore.router')
 
 
 // Body parser middleware
@@ -28,6 +29,7 @@ app.use('/api/user', userRouter);
 app.use('/property', propertyRouter);
 app.use('/upload', uploadRouter);
 app.use('/list', listRouter);
+app.use('/chore', choreRouter);
 
 // Serve static files
 app.use(express.static('server/public'));

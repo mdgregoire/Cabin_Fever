@@ -39,7 +39,12 @@ myApp.config(['$routeProvider', '$locationProvider', function($routeProvider, $l
     })
     .when('/chore', {
       templateUrl: '/views/templates/chore.html',
-      controller: 'ChoreController as vm'
+      controller: 'ChoreController as vm',
+      resolve: {
+        getuser : function(UserService){
+          return UserService.getuser();
+        }
+      }
     })
     .when('/about', {
       templateUrl: '/views/templates/about.html',
