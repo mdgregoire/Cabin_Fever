@@ -1,5 +1,5 @@
-myApp.controller('Opening_ListController',  ['UserService', 'ViewPropertyService', 'ListService', 'Upload', '$timeout', '$location', '$http', '$window',
-  function(UserService, ViewPropertyService, ListService, Upload, $timeout, $location, $http, $window) {
+myApp.controller('Opening_ListController',  ['UserService', 'ViewPropertyService', 'ListService', 'Upload', '$timeout', '$location', '$http', '$route',
+  function(UserService, ViewPropertyService, ListService, Upload, $timeout, $location, $http, $route) {
   console.log('Opening_ListController created');
   var self = this;
 
@@ -7,19 +7,18 @@ myApp.controller('Opening_ListController',  ['UserService', 'ViewPropertyService
   self.userObject = UserService.userObject;
   self.displayProperty = ViewPropertyService.displayProperty;
   self.displayCabin = ViewPropertyService.displayCabin;
-
   let cabinId = self.displayCabin.cabin[0].id;
   self.cabinOpenState = self.displayCabin.cabin[0].op_cl;
-
   self.op_clToggle = ListService.op_clToggle;
-
   self.ListService = ListService;
+  self.readyToToggle = ListService.readyToToggle;
   self.list = ListService.list;
   self.getList = ListService.getList
-  self.getList(cabinId);
   self.clickList = ListService.clickList;
-
   self.showUpload = {show: false};
+  self.clearList = ListService.clearList;
+  self.getList(cabinId);
+
 
 //this toggles the open/closed state on the db for the selected cabin
   self.op_clToggle = function(id, op_cl) {
@@ -30,10 +29,9 @@ myApp.controller('Opening_ListController',  ['UserService', 'ViewPropertyService
       data: {data: op_cl}
     }).then(function(response){
       console.log('success in op_clToggle', response);
-      ViewPropertyService.displayProperty(cabinId).then();
-      // $location.path("/property")
-      // $location.path("/view_property");
-      // $window.location.reload();
+      ViewPropertyService.displayProperty(cabinId).then($location.url('/opening_list'));
+
+      // $route.reload();
       }).catch(function(error){
       console.log('error in op_clToggle', error);
     })
@@ -68,14 +66,16 @@ myApp.controller('Opening_ListController',  ['UserService', 'ViewPropertyService
 //end uploadFiles
 
 self.uploadToggle = function(){
-  console.log('in uploadToggle', self.showUpload.show);
   self.showUpload.show = true;
 }
 
 self.cancelUpload = function(){
-  console.log('in cancel upload');
   self.showUpload.show = false;
 }
 
 
-}]);
+
+
+
+
+}]);// end Opening_ListController

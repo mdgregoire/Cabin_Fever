@@ -6,15 +6,16 @@
     <ul ng-repeat="task in vm.list.array">
       <li ng-hide="'{{vm.cabinOpenState}}' == '{{task.op_cl}}'">
         <input type="checkbox" id="taskList" name="task.task_name" value="completed"
-                ng-checked="task.completed" ng-click="vm.clickList(task.id, task.completed, vm.displayCabin.cabin[0].id)">
+                ng-checked="task.completed" ng-click="vm.clickList(task.id, task.completed, vm.displayCabin.cabin[0].id, vm.cabinOpenState)">
         <label for ="task.task_name" ng-mouseover="tooltip=true" ng-mouseleave="tooltip=false">{{task.task_name}}</label>
         <div class="tooltip" ng-show="tooltip">{{task.task_notes}}</div>
       </li>
     </ul>
   </div>
-  <button>Placeholder: Mark Completed</button>
-  <button>Placeholder: Clear List</button>
-  <button ng-click="vm.op_clToggle(vm.displayCabin.cabin[0].id, vm.cabinOpenState)">Toggle Open/Closed</button>
+  <button ng-click="vm.clearList(vm.displayCabin.cabin[0].id, vm.cabinOpenState)">Clear List</button>
+  <div ng-show="vm.readyToToggle.toggle" >
+    <button ng-click="vm.op_clToggle(vm.displayCabin.cabin[0].id, vm.cabinOpenState)">Toggle Open/Closed</button>
+  </div>
   <div ng-include="'views/partials/actions.html'"></div>
 
 <button ng-click="vm.uploadToggle()" >Upload File?</button>

@@ -16,6 +16,21 @@ router.get('/:id', (request, response) => {
 });
 //end getList
 
+router.put('/clear/:id', (request, response) => {
+  console.log('in clear list put', request.params.id, request.body.openState);
+
+  pool.query('UPDATE opening_closing SET completed = false WHERE property_id = $1;', [request.params.id])
+  .then((result) => {
+    console.log('success in put clear list', result);
+    response.sendStatus(200);
+  })
+  .catch((err) => {
+    console.log('error in put clear list', err);
+    response.sendStatus(500);
+  })
+});
+//end put list for clear
+
 router.put('/:id', (request, response) => {
   console.log('in click list put', request.params.id, request.body.completed);
   let completed = ''
