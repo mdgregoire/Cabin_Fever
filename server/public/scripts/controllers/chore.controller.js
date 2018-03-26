@@ -13,8 +13,9 @@ function(UserService, ViewPropertyService, ChoreService, $location) {
   self.completeChore = ChoreService.completeChore;
   self.addChore = ChoreService.addChore;
   self.getChores = ChoreService.getChores;
-  self.getChores(cabinId).then($location.path("/chore")
-);
+  self.getChores(cabinId).then($location.path("/chore"));
+
+  self.newChore = ChoreService.newChore;
 
 
 }]);

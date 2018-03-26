@@ -30,4 +30,18 @@ router.delete('/:id', (request, response) => {
 });
 //end delete chore
 
+router.post('/:id', (request, response) => {
+  console.log('in post chore', request.params.id, request.body.newChore);
+  pool.query('INSERT into chores (chore_name, chore_notes, property_id) VALUES ($1, $2, $3);',
+  [request.body.newChore.choreName, request.body.newChore.choreNotes, request.params.id])
+  .then((result) => {
+    console.log('posted new chore');
+    response.sendStatus(201);
+  })
+  .catch((err) => {
+    console.log('error in chore post', err);
+    response.sendStatus(500);
+  })
+})
+
 module.exports = router;

@@ -14,7 +14,16 @@
         <button ng-click="vm.completeChore(chore.id, vm.displayCabin.cabin[0].id)">completeChore</button>
       </li>
     </ul>
-    <button ng-click="vm.addChore()">Add Chore</button>
+  <div>
+    <div>
+      <label for="choreName">Chore:</label>
+      <input type="text" name="choreName" ng-model="vm.newChore.choreName" placeholder="Chore"/>
+
+      <label for="choreNotes">Notes:</label>
+      <input type="text" name="choreNotes" ng-model="vm.newChore.choreNotes" placeholder="Notes"/>
+    </div>
+    <button ng-click="vm.addChore( vm.displayCabin.cabin[0].id, vm.newChore)">Add Chore</button>
+  </div>
   </div>
 
 
