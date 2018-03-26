@@ -8,14 +8,14 @@ myApp.service('ViewPropertyService', ['$http', '$location', function($http, $loc
 //this gets the information for the selected property
   self.displayProperty = function (id){
     console.log('in display property', id);
-    $location.url('/property');
 
-    $http({
+    return $http({
       method: 'GET',
       url: `/property/display/${id}`
     }).then(function (response){
       console.log('success in get property', response);
       self.displayCabin.cabin = response.data.rows;
+      $location.url('/property');
     }).catch(function(error){
       console.log('error in get property', error);
     })

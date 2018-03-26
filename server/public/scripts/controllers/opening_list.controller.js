@@ -1,5 +1,5 @@
-myApp.controller('Opening_ListController',  ['UserService', 'ViewPropertyService', 'ListService', 'Upload', '$timeout', '$location', '$http',
-  function(UserService, ViewPropertyService, ListService, Upload, $timeout, $location, $http) {
+myApp.controller('Opening_ListController',  ['UserService', 'ViewPropertyService', 'ListService', 'Upload', '$timeout', '$location', '$http', '$window',
+  function(UserService, ViewPropertyService, ListService, Upload, $timeout, $location, $http, $window) {
   console.log('Opening_ListController created');
   var self = this;
 
@@ -17,10 +17,11 @@ myApp.controller('Opening_ListController',  ['UserService', 'ViewPropertyService
   self.list = ListService.list;
   self.getList = ListService.getList
   self.getList(cabinId);
+  self.clickList = ListService.clickList;
 
   self.showUpload = {show: false};
 
-
+//this toggles the open/closed state on the db for the selected cabin
   self.op_clToggle = function(id, op_cl) {
     console.log('in op_clToggle', id, op_cl);
     $http({
@@ -29,14 +30,15 @@ myApp.controller('Opening_ListController',  ['UserService', 'ViewPropertyService
       data: {data: op_cl}
     }).then(function(response){
       console.log('success in op_clToggle', response);
-      ViewPropertyService.displayProperty(cabinId)
-    }).catch(function(error){
+      ViewPropertyService.displayProperty(cabinId).then();
+      // $location.path("/property")
+      // $location.path("/view_property");
+      // $window.location.reload();
+      }).catch(function(error){
       console.log('error in op_clToggle', error);
     })
   }
   //end op_clToggle
-
-
 
 //this uploads the .csv file to the db
   self.uploadFiles = function(file, errFiles) {

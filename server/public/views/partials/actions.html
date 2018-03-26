@@ -7,7 +7,8 @@
       <p><a href="#!chore">Chores</a></p>
     </div>
     <div class = 'boxed'>
-      <p><a href="#!opening_list">Opening or Closing List</a></p>
+      <p><a ng-show="'{{vm.displayCabin.cabin[0].op_cl}}' == 'open'" href="#!opening_list">Closing List</a></p>
+      <p><a ng-show="'{{vm.displayCabin.cabin[0].op_cl}}' == 'close'" href="#!opening_list">Opening List</a></p>
     </div>
     <div class = 'boxed'>
       <p><a href="#!calendar">Book Visit</a></p>

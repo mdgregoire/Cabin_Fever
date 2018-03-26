@@ -20,5 +20,19 @@ self.getList = function (id) {
 }
 //end list get
 
+self.clickList = function (id, completed, cabinId){
+  console.log('in clickList', id, completed);
+  $http({
+    method: 'PUT',
+    url: `/list/${id}`,
+    data: {completed: completed}
+  }).then(function (response) {
+    console.log('success in put list', response);
+    self.getList(cabinId);
+  }).catch(function(error){
+    console.log('error in put list', error);
+  })
+}
+//end clickList
 
 }]);//end service

@@ -4,9 +4,10 @@
 
   <div class="list" ng-init="tooltip=false">
     <ul ng-repeat="task in vm.list.array">
-      <li ng-hide="'{{vm.cabinOpenState}}' == '{{task.op_cl}}'" ng-mouseover="tooltip=true" ng-mouseleave="tooltip=false">
-        <input type="checkbox" id="taskList" name="task.task_name" value="completed">
-        <label for ="task.task_name" >{{task.task_name}}</label>
+      <li ng-hide="'{{vm.cabinOpenState}}' == '{{task.op_cl}}'">
+        <input type="checkbox" id="taskList" name="task.task_name" value="completed"
+                ng-checked="task.completed" ng-click="vm.clickList(task.id, task.completed, vm.displayCabin.cabin[0].id)">
+        <label for ="task.task_name" ng-mouseover="tooltip=true" ng-mouseleave="tooltip=false">{{task.task_name}}</label>
         <div class="tooltip" ng-show="tooltip">{{task.task_notes}}</div>
       </li>
     </ul>

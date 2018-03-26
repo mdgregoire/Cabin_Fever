@@ -30,7 +30,12 @@ myApp.config(['$routeProvider', '$locationProvider', function($routeProvider, $l
     })
     .when('/property', {
       templateUrl: '/views/templates/property.html',
-      controller: 'PropertyController as vm'
+      controller: 'PropertyController as vm',
+      resolve: {
+        getuser : function(UserService){
+          return UserService.getuser();
+        }
+      }
     })
     .when('/chore', {
       templateUrl: '/views/templates/chore.html',
@@ -46,7 +51,12 @@ myApp.config(['$routeProvider', '$locationProvider', function($routeProvider, $l
     })
     .when('/opening_list', {
       templateUrl: '/views/templates/opening_list.html',
-      controller: 'Opening_ListController as vm'
+      controller: 'Opening_ListController as vm',
+      resolve: {
+        getuser : function(UserService){
+          return UserService.getuser();
+        }
+      }
     })
     .when('/closing_list', {
       templateUrl: '/views/templates/closing_list.html',
