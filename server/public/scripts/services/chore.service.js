@@ -15,11 +15,22 @@ myApp.service('ChoreService', ['$http', '$location', function($http, $location){
     }).catch(function(error){
       console.log('error in get chores', error);
     })
-
-
   }
   //end getChores
 
+  self.completeChore = function(choreId, cabinId){
+    console.log('in completeChore', choreId, cabinId);
+    return $http({
+      method: 'DELETE',
+      url: `/chore/${choreId}`
+    }).then(function(response){
+      console.log('success in get list', response);
+      self.getChores(cabinId);
+    }).catch(function(error){
+      console.log('error in delete chore', error);
+    })
+  }
+//end completeChore
 
 
 

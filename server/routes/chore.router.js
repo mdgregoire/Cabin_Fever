@@ -16,5 +16,18 @@ router.get('/:id', (request, response) => {
 });
 //end getList
 
+router.delete('/:id', (request, response) => {
+  console.log('in delete chore', request.params.id);
+  pool.query('DELETE FROM chores WHERE id = $1;', [request.params.id])
+  .then((result) => {
+    console.log('success in delete', result);
+    response.send(result);
+  })
+  .catch((err) => {
+    console.log('error in delete', err);
+    response.sendStatus(500);
+  })
+});
+//end delete chore
 
 module.exports = router;
