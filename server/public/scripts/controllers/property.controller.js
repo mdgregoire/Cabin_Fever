@@ -12,6 +12,7 @@ myApp.controller('PropertyController', ['UserService', 'ViewPropertyService', fu
   self.getCabins(self.userObject.id);
 
   self.displayProperty = ViewPropertyService.displayProperty;
+  
   self.displayCabin = ViewPropertyService.displayCabin;
 
   self.deleteCabin = ViewPropertyService.deleteCabin;

@@ -1,19 +1,28 @@
 body, html {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
   font-size: 14px;
+  justify-content: center;
+  font-family: 'Cabin Sketch', cursive;
+
+}
+
+h1 {
+  font-family: 'Cabin Sketch', cursive;
 }
 
 .instructions .container h1 {
-  font-size: 32px;
-  font-weight: 600;
+  font-size: 84px;
+  font-weight: 100;
+  font-family: 'Cabin Sketch', cursive;
+  color: yellow;
+  justify-content: center;
 }
 
 .instructions {
   background-color: #333333;
   color: #DDDDDD;
-  padding: 15px;
+  padding: 5px;
 }
 
 .boxed{
