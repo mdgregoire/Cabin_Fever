@@ -52,4 +52,17 @@ router.put('/:id', (request, response) => {
 });
 //end put list
 
+router.delete('/delete/:id', (request, response) => {
+  console.log('in delete list', request.params.id);
+  pool.query('DELETE FROM opening_closing WHERE property_id = $1;', [request.params.id])
+  .then((result) => {
+    console.log('success in delete list', result);
+    response.sendStatus(200);
+  }).catch((err) => {
+    console.log('error in delete list', err);
+    response.sendStatus(500);
+  })
+});
+//end delete list
+
 module.exports = router;

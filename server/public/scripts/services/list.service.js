@@ -83,4 +83,22 @@ self.clearList = function(cabinId, openState){
 }
 //end clearList
 
+self.deleteList = function(cabinId){
+  if (confirm('Are you sure you want to Delete the list? This cannot be undone!')){
+    console.log('in delete confirm yes');
+    $http({
+      method: 'DELETE',
+      url: `/list/delete/${cabinId}`
+    }).then(function(response){
+      console.log('success in delete list', response);
+        self.list = {};
+        $location.url('/property');
+    }).catch(function(error){
+      console.log('error in delete list', error);
+    })
+  }
+}
+//end deleteList
+
+
 }]);//end service

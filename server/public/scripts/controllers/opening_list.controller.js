@@ -18,6 +18,7 @@ myApp.controller('Opening_ListController',  ['UserService', 'ViewPropertyService
   self.showUpload = {show: false};
   self.clearList = ListService.clearList;
   self.getList(cabinId);
+  self.deleteList = ListService.deleteList;
 
 
 //this toggles the open/closed state on the db for the selected cabin
