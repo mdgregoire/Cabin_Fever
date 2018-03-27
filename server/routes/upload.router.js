@@ -21,14 +21,13 @@ router.post('/:id', upload.single('file'), function(request, response){
                     headers: [
                       "task_name",
                       "task_notes",
-                      "op_cl",
-                      "property_name"
+                      "op_cl"
                     ]
     })
     .on('data', function(data, callback){
-      let queryText = `INSERT INTO "opening_closing" (task_name, task_notes, op_cl, property_name, property_id)
-      VALUES ($1, $2, $3, $4, $5);`;
-      pool.query(queryText, [data.task_name, data.task_notes, data.op_cl, data.property_name, id])
+      let queryText = `INSERT INTO "opening_closing" (task_name, task_notes, op_cl, property_id)
+      VALUES ($1, $2, $3, $4);`;
+      pool.query(queryText, [data.task_name, data.task_notes, data.op_cl, id])
       .then((result) => {
           console.log('success in upload post', result);
       }).catch((err) => {

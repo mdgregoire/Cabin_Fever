@@ -76,7 +76,6 @@ self.clearList = function(cabinId, openState){
     self.getList(cabinId).then(self.checkList(cabinId, openState));
     $route.reload();
     self.readyToToggle = {toggle:false};
-
   }).catch(function(error){
     console.log('error in put list', error);
   })
