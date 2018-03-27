@@ -7,6 +7,8 @@ myApp.service('ListService', ['$http', '$location', '$route', function($http, $l
 
 self.getList = function (id) {
   console.log('in getList', id);
+  self.readyToToggle = {toggle:false};
+
   return $http({
     method: 'GET',
     url: `/list/${id}`
@@ -39,15 +41,20 @@ self.clickList = function (id, completed, cabinId, openState){
 self.checkList = function(cabinId, openState){
   let n=0;
   let x=1;
+  $route.reload();
+  self.readyToToggle = {toggle:false};
 
+console.log(openState, 'openState in checklist');
   for(i=0; i<self.list.array.length; i++){
     if(self.list.array[i].op_cl != openState){
       n++;
+      console.log(n, 'n in checklist');
     }
   }
   for(i=0; i<self.list.array.length; i++){
     if(self.list.array[i].completed && (self.list.array[i].op_cl != openState)){
       x++;
+      console.log(x, 'x in checklist');
       if (n == x){
         self.readyToToggle = {toggle:true};
         console.log('readyToToggle', self.readyToToggle);
@@ -67,6 +74,9 @@ self.clearList = function(cabinId, openState){
   }).then(function (response) {
     console.log('success in put list', response);
     self.getList(cabinId).then(self.checkList(cabinId, openState));
+    $route.reload();
+    self.readyToToggle = {toggle:false};
+
   }).catch(function(error){
     console.log('error in put list', error);
   })

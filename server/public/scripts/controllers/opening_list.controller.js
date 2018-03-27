@@ -30,6 +30,7 @@ myApp.controller('Opening_ListController',  ['UserService', 'ViewPropertyService
     }).then(function(response){
       console.log('success in op_clToggle', response);
       ViewPropertyService.displayProperty(cabinId).then($location.url('/opening_list'));
+      $route.reload();
 
       // $route.reload();
       }).catch(function(error){
