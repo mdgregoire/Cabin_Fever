@@ -1,4 +1,4 @@
-var myApp = angular.module('myApp', ['ngRoute', 'ngFileUpload']);
+var myApp = angular.module('myApp', ['ngRoute', 'ngFileUpload', 'ui.bootstrap']);
 
 /// Routes ///
 myApp.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
@@ -88,4 +88,7 @@ myApp.config(['$routeProvider', '$locationProvider', function($routeProvider, $l
     .otherwise({
       template: '<h1>404</h1>'
     });
+
+
+
 }]);

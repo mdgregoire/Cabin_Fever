@@ -18,7 +18,6 @@ h1 {
 #header {
   background-image: url("../assets/homeImg.jpg");
   height: 180px;
-  /* background-attachment: fixed; */
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -90,6 +89,10 @@ ul {
   float: left;
 }
 
+.navbar button {
+  float: left;
+}
+
 .propertyCard li {
   float: left;
 }
@@ -145,22 +148,3 @@ form .progress {
     background: orange;
     width: 0;
 }
-
-
-/* ToolTip Styling */
-
-/* .tooltipText{
-  visibility: hidden;
-  width: 120px;
-  background-color: black;
-  color: white;
-  text-align: center;
-  border-radius: 6px;
-  padding: 5px 0;
-
-  position: absolute;
-  z-index: 1;
-} */
-
-/* .tooltip:hover .tooltipText {
-visibility: visible;} */

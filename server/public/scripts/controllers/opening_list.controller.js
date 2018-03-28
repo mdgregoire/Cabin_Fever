@@ -75,9 +75,4 @@ self.cancelUpload = function(){
   self.showUpload.show = false;
 }
 
-
-
-
-
-
 }]);// end Opening_ListController

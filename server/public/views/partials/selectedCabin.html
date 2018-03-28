@@ -1,11 +1,11 @@
-<div class ="selectedCabin">
-  <div>
-    <p>Name:{{vm.displayCabin.cabin[0].property_name}}</p>
-    <!-- <p ng-show="'{{vm.displayCabin.cabin[0].op_cl}}' == 'open'">The Property is Open</p>
-    <p ng-show="'{{vm.displayCabin.cabin[0].op_cl}}' == 'close'">The Property is Closed</p> -->
-    <img ng-click="vm.displayProperty(cabin.id)" ng-src="{{vm.displayCabin.cabin[0].property_picture}}" width="300px"/>
-
-
+<div class ="container" id="selectedCabin">
+  <div class="row">
+    <div class="col-md-12 selectedCabin text-center" >
+      <h2>{{vm.displayCabin.cabin[0].property_name}}</h2>
+      <img ng-src="{{vm.displayCabin.cabin[0].property_picture}}" width="800px"/>
+    </div>
   </div>
-
 </div>
+
+
+<!-- ng-click="vm.displayProperty({{vm.displayCabin.cabin[0].id}})"  -->

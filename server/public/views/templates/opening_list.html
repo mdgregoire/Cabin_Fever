@@ -2,17 +2,16 @@
 <div class="container" ng-show="vm.userObject.userName">
   <div ng-include=" 'views/partials/selectedCabin.html'"></div>
 
-  <div class="list" ng-init="tooltip=false">
+  <div class="container" id="list">
     <ul>
       <li ng-repeat="task in vm.list.array" ng-hide="'{{vm.cabinOpenState}}' == '{{task.op_cl}}'">
         <input type="checkbox" id="taskList" name="task.task_name" value="completed"
                 ng-checked="task.completed" ng-click="vm.clickList(task.id, task.completed, vm.displayCabin.cabin[0].id, vm.cabinOpenState)">
-        <label for ="task.task_name" ng-mouseover="tooltip=true" ng-mouseleave="tooltip=false">{{task.task_name}}</label>
-        <div class="tooltipText" ng-show="tooltip">{{task.task_notes}}</div>
-        <!-- class="tooltip" -->
+        <label for ="task.task_name" tooltip-placement="right" uib-tooltip="{{task.task_notes}}">{{task.task_name}}</label>
       </li>
     </ul>
   </div>
+
   <div ng-show="{{vm.list.array}}">
     <button ng-click="vm.clearList(vm.displayCabin.cabin[0].id, vm.cabinOpenState)">Clear List</button>
     <button ng-click="vm.deleteList(vm.displayCabin.cabin[0].id)">Delete List</button>

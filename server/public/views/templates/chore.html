@@ -1,19 +1,20 @@
 <div ng-include="'views/partials/nav.html'"></div>
 <div class="container" ng-show="vm.userObject.userName">
-  <p>
-    In Chore
-  </p>
   <div ng-include=" 'views/partials/selectedCabin.html'"></div>
   <div ng-include="'views/partials/actions.html'"></div>
 
 
   <div class="choreBox" ng-init="tooltip=false">
-    <ul ng-repeat="chore in vm.chore.array">
-      <li ng-mouseover="tooltip=true" ng-mouseleave="tooltip=false">{{chore.chore_name}}</li><br>
-        <div class="tooltip" ng-show="tooltip">{{chore.chore_notes}}</div>
-        <button ng-click="vm.completeChore(chore.id, vm.displayCabin.cabin[0].id)">completeChore</button>
-      </li>
-    </ul>
+    <div class="container" id="choreList">
+      <ul>
+        <li ng-repeat="chore in vm.chore.array">
+          <input type="checkbox" id="choreCheckBox" name="chore.chore_name" value="completed"
+                ng-click="vm.completeChore(chore.id, vm.displayCabin.cabin[0].id)">
+          <label for ="chore.chore_name" tooltip-placement="right" uib-tooltip="{{chore.chore_notes}}">{{chore.chore_name}}</label>
+        </li>
+      </ul>
+    </div>
+
   <div>
     <div>
       <label for="choreName">Chore:</label>
