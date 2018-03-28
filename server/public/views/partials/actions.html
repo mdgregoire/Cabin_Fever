@@ -1,4 +1,4 @@
-<div class="actions">
+<div class="actions" id="actionBox">
   <div class = "container">
     <div class = "boxed">
       <p><a href="#!property">Start Visit</a></p>
@@ -6,9 +6,11 @@
     <div class = "boxed">
       <p><a href="#!chore">Chores</a></p>
     </div>
-    <div class = "boxed">
-      <p><a ng-show="'{{vm.displayCabin.cabin[0].op_cl}}' == 'open'" href="#!opening_list">Closing List</a></p>
-      <p><a ng-show="'{{vm.displayCabin.cabin[0].op_cl}}' == 'close'" href="#!opening_list">Opening List</a></p>
+    <div class = "boxed" ng-show="'{{vm.displayCabin.cabin[0].op_cl}}' == 'open'" >
+      <p><a href="#!opening_list">Closing List</a></p>
+    </div>
+    <div class = "boxed" ng-show="'{{vm.displayCabin.cabin[0].op_cl}}' == 'close'" >
+      <p><a href="#!opening_list">Opening List</a></p>
     </div>
     <div class = "boxed">
       <p><a href="#!calendar">Book Visit</a></p>

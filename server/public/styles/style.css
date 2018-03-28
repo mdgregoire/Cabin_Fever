@@ -24,6 +24,24 @@ h1 {
 
 }
 
+#actionBox {
+  /* float: right; */
+  /* margin-right: 50px; */
+  /* transform: translateX(1500px); */
+  transform: translateY(-550px);
+  z-index: 300;
+}
+
+#selectedCabin {
+  z-index:1;
+}
+
+#list {
+  transform: translateY(-400px);
+  /* transform: translateX(-100px); */
+  z-index: 300;
+}
+
 .no-padding {
   padding-left: 0;
   padding-right: 0;

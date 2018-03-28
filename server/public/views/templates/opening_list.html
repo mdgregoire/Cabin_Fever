@@ -1,6 +1,7 @@
 <div ng-include="'views/partials/nav.html'"></div>
 <div class="container" ng-show="vm.userObject.userName">
   <div ng-include=" 'views/partials/selectedCabin.html'"></div>
+  <div ng-include="'views/partials/actions.html'"></div>
 
   <div class="container" id="list">
     <ul>
@@ -19,11 +20,10 @@
   <div ng-show="vm.readyToToggle.toggle" >
     <button ng-click="vm.op_clToggle(vm.displayCabin.cabin[0].id, vm.cabinOpenState)">Toggle Open/Closed</button>
   </div>
-  <div ng-include="'views/partials/actions.html'"></div>
 
-<button ng-click="vm.uploadToggle()" >Upload File?</button>
-<button ng-click="vm.cancelUpload()" >Cancel</button>
 
+  <button ng-click="vm.uploadToggle()" >Upload File?</button>
+  <button ng-click="vm.cancelUpload()" >Cancel</button>
   <div ng-show="vm.showUpload.show" class="upload">
     <div>
     <h4>Upload on file select</h4>
