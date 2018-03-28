@@ -4,7 +4,6 @@ body, html {
   font-size: 14px;
   justify-content: center;
   font-family: 'Cabin Sketch', cursive;
-
 }
 
 h1 {
@@ -17,6 +16,7 @@ h1 {
   font-family: 'Cabin Sketch', cursive;
   color: yellow;
   justify-content: center;
+  text-align: center;
 }
 
 .instructions {
@@ -79,13 +79,17 @@ ul {
   overflow: hidden;
 }
 
-li {
+.navbar li {
+  float: left;
+}
+
+.propertyCard li {
   float: left;
 }
 
 li a {
   display: block;
-  color: white;
+  color: black;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
@@ -134,3 +138,22 @@ form .progress {
     background: orange;
     width: 0;
 }
+
+
+/* ToolTip Styling */
+
+/* .tooltipText{
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: white;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+
+  position: absolute;
+  z-index: 1;
+} */
+
+/* .tooltip:hover .tooltipText {
+visibility: visible;} */
