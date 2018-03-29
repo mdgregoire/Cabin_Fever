@@ -1,8 +1,9 @@
-body, html {
+body, html, main {
   margin: 200;
   padding: 20;
   font-size: 14px;
-  background-color: #8da85a;
+  background-color: #6f8366;
+  height: 100%;
 }
 
 h1 {
@@ -25,11 +26,26 @@ h1 {
 
 }
 
+#home {
+  background-image: url("../assets/cabinFever.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 100%;
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+}
+
 #choreList {
   padding: 15px;
   background-color: white;
   margin: 10px;
   border-radius: 5px;
+}
+
+.fill {
+  min-height: 100%;
+  height:100%;
 }
 
 .titleBar {
@@ -44,7 +60,21 @@ h1 {
   margin: 5px;
 }
 
+#login {
+  background-color: white;
+  border-radius: 5px;
+  transform: translateY(300px)
 
+}
+
+.vertical-center {
+  height: 200px; /* These two lines are counted as one :-)       */
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
 
 
 #addChore {
@@ -89,13 +119,18 @@ h1 {
   float: right;
 }
 
+.homeLink{
+  float: right;
+  margin-left: 25px;
+}
+
 .no-padding {
   padding-left: 0;
   padding-right: 0;
 }
 
 .navbar {
-  background-color: #5D8B00;
+  background-color: #4E6146;
   width: 100%;
   border-radius: 0px;
 }

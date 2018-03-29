@@ -1,5 +1,6 @@
-<div ng-include="'views/partials/nav.html'"></div>
-<div class="container" ng-show="vm.userObject.userName">
+<div class="container-fluid no-padding" ng-show="vm.userObject.userName">
+  <div ng-include="'/views/partials/header.html'"></div>
+  <div ng-include="'/views/partials/nav.html'"></div>
 
 <div class="row">
   <div ng-repeat = "cabin in vm.cabins.array" class="col-md-3 col-sm-4 col-xs-4">

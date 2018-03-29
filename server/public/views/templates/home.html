@@ -1,19 +1,10 @@
-<!DOCTYPE html>
 
-<div class="container">
-    <h1 class="lead alert alert-danger" role="alert" ng-if="vm.message != ''">{{vm.message}}</h2>
-    <form ng-submit="vm.login()">
-      <div>
-          <label for="username">Username:</label>
-          <input type="text" ng-model="vm.user.username" />
-      </div>
-      <div>
-          <label for="password">Password:</label>
-          <input type="password" ng-model="vm.user.password" />
-      </div>
-      <div>
-          <input class="btn btn-default" type="submit" name="submit" value="Log In" />
-          <a href="#!register">Register</a>
-      </div>
-    </form>
+<div id="home" class="container fill">
+
+        <a class="homeLink" ng-click="vm.showLogin(vm.showLoginToggle.toggle)">Login</a>
+        <a class="homeLink" href="#!register">Register</a>
+        <!-- <p>{{vm.showLoginToggle.toggle}}</p> -->
+
+  <div ng-show="vm.showLoginToggle.toggle">
+    <div  ng-include="'/views/partials/login.html'"></div>
 </div>

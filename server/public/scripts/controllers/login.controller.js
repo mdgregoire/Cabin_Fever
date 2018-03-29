@@ -1,4 +1,4 @@
-myApp.controller('LoginController', ['$http', '$location', 'UserService', function($http, $location, UserService) {
+myApp.controller('LoginController', ['$http', '$location', 'UserService', '$route',  function($http, $location, UserService, $route) {
     console.log('LoginController created');
     var self = this;
     self.user = {
@@ -6,8 +6,12 @@ myApp.controller('LoginController', ['$http', '$location', 'UserService', functi
       password: ''
     };
     self.message = '';
+    self.showLoginToggle = {toggle:false};
+
+
 
     self.login = function () {
+      console.log('in login');
       if (self.user.username === '' || self.user.password === '') {
         self.message = "Enter your username and password!";
       } else {
@@ -45,4 +49,18 @@ myApp.controller('LoginController', ['$http', '$location', 'UserService', functi
           });
       }
     }
+
+    self.showLogin = function(toggle){
+      console.log('in showLogin', toggle);
+      if (toggle){
+        self.showLoginToggle.toggle = false;
+      } else{
+        self.showLoginToggle.toggle = true;
+      }
+      // $location.url('/home');
+
+    }
+    //end showLogin
+
+
 }]);
