@@ -12,7 +12,7 @@
   <div>
     <div id="list">
       <ul id="listUL">
-        <li class="col-md-2 listItem" ng-repeat="task in vm.list.array" ng-hide="'{{vm.cabinOpenState}}' == '{{task.op_cl}}'">
+        <li class="col-md-3 col-sm-3 col-xs-4 listItem" ng-repeat="task in vm.list.array" ng-hide="'{{vm.cabinOpenState}}' == '{{task.op_cl}}'">
           <input type="checkbox" id="taskList" name="task.task_name" value="completed"
                   ng-checked="task.completed" ng-click="vm.clickList(task.id, task.completed, vm.displayCabin.cabin[0].id, vm.cabinOpenState)">
           <label for ="task.task_name" tooltip-placement="top" uib-tooltip="{{task.task_notes}}" >{{task.task_name}}</label>

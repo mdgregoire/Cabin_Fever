@@ -1,4 +1,4 @@
-myApp.controller('PropertyController', ['UserService', 'ViewPropertyService', function(UserService, ViewPropertyService) {
+myApp.controller('PropertyController', ['UserService', 'ViewPropertyService', 'AddPropertyService', function(UserService, ViewPropertyService, AddPropertyService) {
   console.log('PropertyController created');
   var self = this;
 
@@ -12,11 +12,16 @@ myApp.controller('PropertyController', ['UserService', 'ViewPropertyService', fu
   self.getCabins(self.userObject.id);
 
   self.displayProperty = ViewPropertyService.displayProperty;
-  
+
   self.displayCabin = ViewPropertyService.displayCabin;
 
   self.deleteCabin = ViewPropertyService.deleteCabin;
   self.showEditCabin = ViewPropertyService.showEditCabin;
   self.editProperty = ViewPropertyService.editCabin;
 
+  self.upload = AddPropertyService.upload;
+  self.addProperty = AddPropertyService.addProperty;
+  self.newProperty = AddPropertyService.newProperty;
+
+  self.newProperty.userObject = UserService.userObject;
 }]);

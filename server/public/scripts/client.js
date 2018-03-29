@@ -68,13 +68,14 @@ myApp.config(['$routeProvider', '$locationProvider', function($routeProvider, $l
       controller: 'Closing_ListController as vm'
     })
     .when('/user', {
-      templateUrl: '/views/templates/viewProperty.html',
-      controller: 'PropertyController as vm',
-      resolve: {
-        getuser : function(UserService){
-          return UserService.getuser();
-        }
-      }
+      redirectTo: 'view_property'
+      // templateUrl: '/views/templates/viewProperty.html',
+      // controller: 'PropertyController as vm',
+      // resolve: {
+      //   getuser : function(UserService){
+      //     return UserService.getuser();
+      //   }
+      // }
     })
     .when('/info', {
       templateUrl: '/views/templates/info.html',
