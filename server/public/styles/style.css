@@ -1,6 +1,6 @@
 body, html {
-  margin: 0;
-  padding: 0;
+  margin: 200;
+  padding: 20;
   font-size: 14px;
   background-color: #8da85a;
 }
@@ -24,22 +24,91 @@ h1 {
 
 }
 
-#actionBox {
-  /* float: right; */
-  /* margin-right: 50px; */
-  /* transform: translateX(1500px); */
+#choreList {
+  padding: 30px;
+  background-color: white;
+  margin: 10px;
+  border-radius: 5px;
+}
+
+.addChoreInput{
+  /* padding: 3px; */
+  /* padding-right: 5px; */
+  margin: 5px;
+
+}
+
+.addChoreLabel{
+  /* padding: 3px; */
+  margin: 5px;
+  /* padding-left: 5px; */
+
+}
+
+#addChoreButton{
+
+}
+
+#addChore {
+  /* margin-top: : 300px; */
+  background-color: white;
+  border-radius: 5px;
+  padding: 15px;
+}
+
+#list {
+  padding: 30px;
+  background-color: white;
+  margin-top: : 500px;
+  border-radius: 5px;
+
+}
+
+#uploadToggle{
+  margin-top: 5px;
+}
+
+#listUL{
+  padding: 30px;
+}
+
+.listItem{
+  padding: 3px;
+}
+
+/* .redDiv {
+  border-style: solid;
+  border-color: red;
+}
+
+.blueDiv {
+  border-style: solid;
+  border-color: blue;
+} */
+
+#selectedCabin {
+  z-index:1;
+  padding-left: 100px;
+}
+
+/* #actionBox {
+  float: right;
+  margin-right: 50px;
+  transform: translateX(1500px);
   transform: translateY(-550px);
   z-index: 300;
 }
 
-#selectedCabin {
-  z-index:1;
-}
+
 
 #list {
   transform: translateY(-400px);
-  /* transform: translateX(-100px); */
+  transform: translateX(-100px);
   z-index: 300;
+} */
+
+#logoutButton {
+  float: right;
 }
 
 .no-padding {

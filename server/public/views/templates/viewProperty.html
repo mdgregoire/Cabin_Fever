@@ -8,8 +8,8 @@
       <li>
         <img ng-src="{{cabin.property_picture}}" width="100px" ng-click="vm.displayProperty(cabin.id)"/>
       </li>
-      <li><button ng-click="vm.deleteCabin(cabin.id)" class="btn btn-warning" >Delete Cabin</button></li>
-      <li ng-hide={{cabin.is_edit}}><button ng-click="vm.showEditCabin(cabin.id, cabin.is_edit)" class="btn btn-warning" >Edit Cabin</button></li>
+      <li><button ng-click="vm.deleteCabin(cabin.id)" class="btn btn-warning btn-xs" >Delete Cabin</button></li>
+      <li ng-hide={{cabin.is_edit}}><button ng-click="vm.showEditCabin(cabin.id, cabin.is_edit)" class="btn btn-warning btn-xs" >Edit Cabin</button></li>
       <li ng-show={{cabin.is_edit}}><div>
         <form>
             <div>
@@ -72,8 +72,8 @@
               <option value="WY">Wyoming</option>
             </select>
             <div>
-              <button ng-click="vm.editProperty(cabin)" class="btn btn-success">Edit Property!</button>
-              <button ng-click="vm.showEditCabin(cabin.id, cabin.is_edit)" class="btn btn-success">Cancel!</button>
+              <button ng-click="vm.editProperty(cabin)" class="btn btn-success btn-xs">Edit Property!</button>
+              <button ng-click="vm.showEditCabin(cabin.id, cabin.is_edit)" class="btn btn-success btn-xs">Cancel!</button>
 
             </div>
         </form>

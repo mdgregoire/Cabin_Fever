@@ -1,8 +1,6 @@
-<div class="actions" id="actionBox">
-  <div class = "container">
-    <div class = "boxed">
-      <p><a href="#!property">Start Visit</a></p>
-    </div>
+<div class=" text-center col-md-3" id="actionBox">
+  <h2>{{vm.displayCabin.cabin[0].property_name}}</h2>
+
     <div class = "boxed">
       <p><a href="#!chore">Chores</a></p>
     </div>
@@ -12,8 +10,48 @@
     <div class = "boxed" ng-show="'{{vm.displayCabin.cabin[0].op_cl}}' == 'close'" >
       <p><a href="#!opening_list">Opening List</a></p>
     </div>
-    <div class = "boxed">
+    <br>
+    <br>
+    <!-- <div class = "boxed">
+      <p><a href="#!property">Start Visit</a></p>
+    </div> -->
+    <!-- <div class = "boxed">
       <p><a href="#!calendar">Book Visit</a></p>
+    </div> -->
+    <div ng-if="vm.currentPath =='/chore'" id="addChore">
+      <div class="row">
+        <label class="addChoreLabel" for="choreName">Chore:</label>
+          <input class="addChoreInput"  ng-if="vm.currentPath =='/chore'" type="text" name="choreName" ng-model="vm.newChore.choreName" placeholder="Chore"/>
+      </div>
+      <div class="row">
+        <label class="addChoreLabel"  for="choreNotes">Notes:</label>
+          <input class="addChoreInput" ng-if="vm.currentPath =='/chore'" type="text" name="choreNotes" ng-model="vm.newChore.choreNotes" placeholder="Notes"/>
+      </div>
+      <div class="row">
+        <button class="addChoreButton" ng-click="vm.addChore( vm.displayCabin.cabin[0].id, vm.newChore)">Add Chore</button>
+      </div>
     </div>
-  </div>
+
+          <button id="uploadToggle" ng-if="vm.currentPath =='/opening_list' " ng-click="vm.uploadToggle()" >Upload File?</button>
+              <div ng-show="vm.showUpload.show" class="upload">
+                <div>
+                <h4>Please select a .csv file to upload.</h4>
+                <button ng-click="vm.cancelUpload()" >Cancel</button>
+                <button type="file" ngf-select="vm.uploadFiles($file, $invalidFiles)"
+                        accept=".csv" ngf-max-size="100MB">
+                    Select File</button>
+
+                <div style="font:smaller">{{vm.f.name}} {{vm.errFile.name}} {{vm.errFile.$error}} {{vm.errFile.$errorParam}}
+                    <span class="progress" ng-show="vm.f.progress >= 0">
+                        <div style="width:{{vm.f.progress}}%"
+                             ng-bind="vm.f.progress + '%'"></div>
+                    </span>
+                </div>
+                {{errorMsg}}
+              </div>
+
+
+              <!-- ng-if="vm.currentPath =='/chore' -->
+
+
 </div>

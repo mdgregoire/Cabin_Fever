@@ -16,6 +16,8 @@ function(UserService, ViewPropertyService, ChoreService, $location) {
   self.getChores(cabinId).then($location.path("/chore"));
 
   self.newChore = ChoreService.newChore;
+  self.currentPath = $location.path();
+  console.log(self.currentPath, 'CURRENT PATH ************* in chore');
 
 
 }]);

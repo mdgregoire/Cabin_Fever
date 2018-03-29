@@ -1,7 +1,12 @@
 <div ng-include="'views/partials/nav.html'"></div>
 
-<div class="container" ng-show="vm.userObject.userName">
-<div ng-include=" 'views/partials/selectedCabin.html'"></div>
-<div ng-include="'views/partials/actions.html'"></div>
-
+<div class="container-fluid" ng-show="vm.userObject.userName">
+  <div class="row">
+      <div>
+       <div ng-include=" 'views/partials/selectedCabin.html'"></div>
+      </div>
+      <div>
+        <div ng-include="'views/partials/actions.html'"></div>
+      </div>
+  </div>
 </div>

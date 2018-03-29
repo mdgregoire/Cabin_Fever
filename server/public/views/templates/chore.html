@@ -1,31 +1,29 @@
 <div ng-include="'views/partials/nav.html'"></div>
-<div class="container" ng-show="vm.userObject.userName">
-  <div ng-include=" 'views/partials/selectedCabin.html'"></div>
-  <div ng-include="'views/partials/actions.html'"></div>
 
 
-  <div class="choreBox" ng-init="tooltip=false">
+  <div class="container-fluid" ng-show="vm.userObject.userName">
+    <div class="row">
+        <div>
+         <div ng-include=" 'views/partials/selectedCabin.html'"></div>
+        </div>
+        <div>
+          <div ng-include="'views/partials/actions.html'"></div>
+        </div>
+    </div>
+  </div>
+
+  <div>
+    <h2>Added chores will display here!</h2>
+
     <div class="container" id="choreList">
+
       <ul>
-        <li ng-repeat="chore in vm.chore.array">
+        <li class="col-md-4" ng-repeat="chore in vm.chore.array">
           <input type="checkbox" id="choreCheckBox" name="chore.chore_name" value="completed"
                 ng-click="vm.completeChore(chore.id, vm.displayCabin.cabin[0].id)">
           <label for ="chore.chore_name" tooltip-placement="right" uib-tooltip="{{chore.chore_notes}}">{{chore.chore_name}}</label>
         </li>
       </ul>
     </div>
-
-  <div>
-    <div>
-      <label for="choreName">Chore:</label>
-      <input type="text" name="choreName" ng-model="vm.newChore.choreName" placeholder="Chore"/>
-
-      <label for="choreNotes">Notes:</label>
-      <input type="text" name="choreNotes" ng-model="vm.newChore.choreNotes" placeholder="Notes"/>
-    </div>
-    <button ng-click="vm.addChore( vm.displayCabin.cabin[0].id, vm.newChore)">Add Chore</button>
   </div>
-  </div>
-
-
 </div>

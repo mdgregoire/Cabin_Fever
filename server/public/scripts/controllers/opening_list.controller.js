@@ -19,7 +19,7 @@ myApp.controller('Opening_ListController',  ['UserService', 'ViewPropertyService
   self.clearList = ListService.clearList;
   self.getList(cabinId);
   self.deleteList = ListService.deleteList;
-
+  self.currentPath = $location.path();
 
 //this toggles the open/closed state on the db for the selected cabin
   self.op_clToggle = function(id, op_cl) {
