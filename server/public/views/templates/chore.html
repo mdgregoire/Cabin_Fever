@@ -17,11 +17,11 @@
 
     <div class="container" id="choreList">
 
-      <ul>
-        <li class="col-md-4" ng-repeat="chore in vm.chore.array">
+      <ul id="choreUL">
+        <li class="col-md-3" ng-repeat="chore in vm.chore.array">
           <input type="checkbox" id="choreCheckBox" name="chore.chore_name" value="completed"
                 ng-click="vm.completeChore(chore.id, vm.displayCabin.cabin[0].id)">
-          <label for ="chore.chore_name" tooltip-placement="right" uib-tooltip="{{chore.chore_notes}}">{{chore.chore_name}}</label>
+          <label for ="chore.chore_name" tooltip-placement="top" uib-tooltip="{{chore.chore_notes}}">{{chore.chore_name}}</label>
         </li>
       </ul>
     </div>

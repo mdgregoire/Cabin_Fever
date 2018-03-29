@@ -25,7 +25,7 @@ h1 {
 }
 
 #choreList {
-  padding: 30px;
+  padding: 15px;
   background-color: white;
   margin: 10px;
   border-radius: 5px;
@@ -45,9 +45,6 @@ h1 {
 
 }
 
-#addChoreButton{
-
-}
 
 #addChore {
   /* margin-top: : 300px; */
@@ -57,9 +54,9 @@ h1 {
 }
 
 #list {
-  padding: 30px;
+  padding: 15px;
   background-color: white;
-  margin-top: : 500px;
+  /* margin-top: : 500px; */
   border-radius: 5px;
 
 }
@@ -72,23 +69,22 @@ h1 {
   padding: 30px;
 }
 
+#choreUL{
+  padding: 30px;
+}
+
 .listItem{
   padding: 3px;
 }
 
-/* .redDiv {
-  border-style: solid;
-  border-color: red;
+.card {
+  margin: 20px;
 }
-
-.blueDiv {
-  border-style: solid;
-  border-color: blue;
-} */
 
 #selectedCabin {
   z-index:1;
   padding-left: 100px;
+  margin-bottom: 50px;
 }
 
 /* #actionBox {
@@ -180,9 +176,6 @@ ul {
   float: left;
 }
 
-.propertyCard li {
-  float: left;
-}
 
 li a {
   display: block;
