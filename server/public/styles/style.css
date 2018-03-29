@@ -21,6 +21,7 @@ h1 {
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
+  margin-top: 50px;
 
 }
 
@@ -29,6 +30,10 @@ h1 {
   background-color: white;
   margin: 10px;
   border-radius: 5px;
+}
+
+.titleBar {
+  margin-top: 20px;
 }
 
 .addChoreInput{
@@ -47,7 +52,7 @@ h1 {
 }
 
 #list {
-  /* padding: 15px; */
+  padding: 15px;
   background-color: white;
   border-radius: 5px;
 }
