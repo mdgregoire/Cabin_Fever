@@ -32,33 +32,24 @@ h1 {
 }
 
 .addChoreInput{
-  /* padding: 3px; */
-  /* padding-right: 5px; */
   margin: 5px;
-
 }
 
 .addChoreLabel{
-  /* padding: 3px; */
   margin: 5px;
-  /* padding-left: 5px; */
-
 }
 
 
 #addChore {
-  /* margin-top: : 300px; */
   background-color: white;
   border-radius: 5px;
   padding: 15px;
 }
 
 #list {
-  padding: 15px;
+  /* padding: 15px; */
   background-color: white;
-  /* margin-top: : 500px; */
   border-radius: 5px;
-
 }
 
 #uploadToggle{
@@ -86,22 +77,6 @@ h1 {
   padding-left: 100px;
   margin-bottom: 50px;
 }
-
-/* #actionBox {
-  float: right;
-  margin-right: 50px;
-  transform: translateX(1500px);
-  transform: translateY(-550px);
-  z-index: 300;
-}
-
-
-
-#list {
-  transform: translateY(-400px);
-  transform: translateX(-100px);
-  z-index: 300;
-} */
 
 #logoutButton {
   float: right;
