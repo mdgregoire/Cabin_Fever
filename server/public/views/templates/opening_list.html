@@ -1,4 +1,5 @@
-<div ng-cloak ng-include="'views/partials/nav.html'"></div>
+<div ng-include="'/views/partials/header.html'"></div>
+<div ng-include="'views/partials/nav.html'"></div>
 
 <div class="container-fluid" ng-show="vm.userObject.userName">
   <div class="row">
@@ -9,8 +10,8 @@
         <div ng-include="'views/partials/actions.html'"></div>
       </div>
   </div>
-  <div>
-    <div id="list">
+
+    <div  ng-cloak class="container" id="list">
       <ul id="listUL">
         <li class="col-md-3 col-sm-3 col-xs-4 listItem" ng-repeat="task in vm.list.array" ng-hide="'{{vm.cabinOpenState}}' == '{{task.op_cl}}'">
           <input type="checkbox" id="taskList" name="task.task_name" value="completed"
@@ -19,12 +20,29 @@
         </li>
       </ul>
     </div>
+<div class="container lowButtons">
+  <div class="container col-md-3">
+    <div class="row">
+      <button ng-click="vm.clearList(vm.displayCabin.cabin[0].id, vm.cabinOpenState)" class="btn-xs btn-warning">Clear List</button>
+      <button ng-click="vm.deleteListConfirm(vm.displayCabin.cabin[0].id)" class="btn-xs btn-warning">Delete List</button>
+      <button ng-show="vm.readyToToggle.toggle" class="btn-xs btn-warning" ng-click="vm.op_clToggle(vm.displayCabin.cabin[0].id, vm.cabinOpenState)">Toggle Open/Closed</button>
+      <button id="uploadToggle" ng-if="vm.currentPath =='/opening_list'" class="btn-xs btn-warning" ng-click="vm.uploadToggle()" >Upload a .csv File?</button>
+    </div>
+  </div>
 
-    <div ng-show="{{vm.list.array}}">
-      <button ng-click="vm.clearList(vm.displayCabin.cabin[0].id, vm.cabinOpenState)">Clear List</button>
-      <button ng-click="vm.deleteListConfirm(vm.displayCabin.cabin[0].id)">Delete List</button>
-      <button ng-show="vm.readyToToggle.toggle" ng-click="vm.op_clToggle(vm.displayCabin.cabin[0].id, vm.cabinOpenState)">Toggle Open/Closed</button>
-
+  <div id="uploadToggleField" class="container col-md-6" ng-show="vm.showUpload.show">
+    <div class="row">
+      <p class="col-md-4">Please select a .csv file.</p>
+      <button type="file" ngf-select="vm.uploadFiles($file, $invalidFiles)" accept=".csv" ngf-max-size="100MB" class="btn-xs btn-warning uploadButton">Select File</button>
+      <button ng-click="vm.cancelUpload()" class="btn-xs btn-warning uploadButton ">Cancel</button>
     </div>
   </div>
 </div>
+        <!-- <div style="font:smaller">{{vm.f.name}} {{vm.errFile.name}} {{vm.errFile.$error}} {{vm.errFile.$errorParam}}
+            <span class="progress" ng-show="vm.f.progress >= 0">
+                <div style="width:{{vm.f.progress}}%"
+                     ng-bind="vm.f.progress + '%'">
+       </div>       -->
+            <!-- </span> -->
+
+        <!-- {{errorMsg}} -->

@@ -12,11 +12,12 @@
     </div>
   </div>
 
-  <div>
-    <h2>Added chores will display here!</h2>
-
-    <div class="container" id="choreList">
-
+  <div class="container">
+    <h4>Added chores will display here:</h4>
+  </div>
+  <div class="container" id="choreList">
+    <div class ="row">
+      <p ng-show="vm.chore.array.choreName">add a chore!</p>
       <ul id="choreUL">
         <li class="col-md-3" ng-repeat="chore in vm.chore.array">
           <input type="checkbox" id="choreCheckBox" name="chore.chore_name" value="completed"
@@ -26,4 +27,3 @@
       </ul>
     </div>
   </div>
-</div>

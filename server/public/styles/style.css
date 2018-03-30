@@ -68,13 +68,11 @@ h5 {
   padding: 15px;
   background-color: white;
   margin: 10px;
+  margin-left: 50px;
   border-radius: 5px;
 }
 
-#actionBox {
-  border-style: solid;
-  border-color: red;
-}
+
 
 .panel-footer {
   padding-bottom: 5px;
@@ -123,11 +121,12 @@ h5 {
   padding: 15px;
   background-color: white;
   border-radius: 5px;
+  margin-bottom: 15px;
 }
-
-#uploadToggle{
-  margin-top: 5px;
-}
+/*
+.uploadButton{
+float: left;
+} */
 
 #listUL{
   padding: 30px;
@@ -173,10 +172,6 @@ h5 {
   padding-left: 20px;
 }
 
-.boxed{
-  border: 1px solid green;
-  width: 200px;
-}
 
 /* .welcome{
   color: white;
@@ -304,4 +299,24 @@ form .progress {
   font-size: 32px;
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.21);
   /* margin-bottom: 28px; */
+}
+
+.redBox{
+  border-style: solid;
+  border-color: red;
+}
+
+.blueBox{
+  border-style: solid;
+  border-color: blue;
+}
+
+.lowButtons {
+  /* margin-top: 15px; */
+  margin-bottom: 40px;
+}
+
+p{
+  padding: 0px;
+  margin: 0px;
 }

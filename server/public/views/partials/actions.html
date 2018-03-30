@@ -1,18 +1,23 @@
 <div class=" text-center col-md-3" id="actionBox">
-  <h5>{{vm.displayCabin.cabin[0].property_name}}</h5>
-
-    <div class = "boxed">
-      <p><a href="#!chore">Chores</a></p>
+    <div class="row">
+      <div class= "panel panel-success">
+        <div class="panel-heading"><h5>{{vm.displayCabin.cabin[0].property_name}}</h5></div>
+        <div class="panel-body">
+          <h4><a href="#!chore">Chores</a></h4>
+        </div>
+        <div ng-show="'{{vm.displayCabin.cabin[0].op_cl}}' == 'open'" class="panel-body">
+          <h4><a href="#!opening_list">Closing List</a></h4>
+        </div>
+        <div ng-show="'{{vm.displayCabin.cabin[0].op_cl}}' == 'close'" class="panel-body">
+          <h4><a href="#!opening_list">Opening List</a></h4>
+        </div>
+      </div>
     </div>
-    <div class = "boxed" ng-show="'{{vm.displayCabin.cabin[0].op_cl}}' == 'open'" >
-      <p><a href="#!opening_list">Closing List</a></p>
-    </div>
-    <div class = "boxed" ng-show="'{{vm.displayCabin.cabin[0].op_cl}}' == 'close'" >
-      <p><a href="#!opening_list">Opening List</a></p>
-    </div>
-    <br>
     <br>
     <div ng-if="vm.currentPath =='/chore'" id="addChore">
+      <div class="row">
+        <h4>Add a chore:</h4>
+      </div>
       <div class="row">
         <label class="addChoreLabel" for="choreName">Chore:</label>
           <input class="addChoreInput"  ng-if="vm.currentPath =='/chore'" type="text" name="choreName" ng-model="vm.newChore.choreName" placeholder="Chore"/>
@@ -22,12 +27,12 @@
           <input class="addChoreInput" ng-if="vm.currentPath =='/chore'" type="text" name="choreNotes" ng-model="vm.newChore.choreNotes" placeholder="Notes"/>
       </div>
       <div class="row">
-        <button class="addChoreButton" ng-click="vm.addChore( vm.displayCabin.cabin[0].id, vm.newChore)">Add Chore</button>
+        <button class="addChoreButton btn-xs btn-warning" ng-click="vm.addChore( vm.displayCabin.cabin[0].id, vm.newChore)">Add Chore</button>
       </div>
     </div>
 
-    <button id="uploadToggle" ng-if="vm.currentPath =='/opening_list' " ng-click="vm.uploadToggle()" >Upload File?</button>
-        <div ng-show="vm.showUpload.show" class="upload">
+    <!-- <button id="uploadToggle" ng-if="vm.currentPath =='/opening_list'" class="btn-xs btn-warning"ng-click="vm.uploadToggle()" >Upload a .csv File?</button> -->
+        <!-- <div ng-show="vm.showUpload.show" class="upload">
           <div>
           <h4>Please select a .csv file to upload.</h4>
           <button ng-click="vm.cancelUpload()" >Cancel</button>
@@ -42,10 +47,7 @@
               </span>
           </div>
           {{errorMsg}}
-        </div>
-
-
-        <!-- ng-if="vm.currentPath =='/chore' -->
+        </div> -->
 
 
 </div>

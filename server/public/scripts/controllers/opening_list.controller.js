@@ -60,7 +60,7 @@ myApp.controller('Opening_ListController',  ['UserService', 'ViewPropertyService
                                  evt.loaded / evt.total));
     });
     }
-    swal({text: ".csvFile Successfuly Uploaded!"})
+    swal({text: ".csv File Successfuly Uploaded!"})
     self.showUpload.show = false;
     $location.path("/property");
   }
