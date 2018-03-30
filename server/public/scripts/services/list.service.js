@@ -82,9 +82,38 @@ self.clearList = function(cabinId, openState){
 }
 //end clearList
 
+//this uses sweet alerts to create a confirm window fo delete cabin
+self.deleteListConfirm = function (id){
+  console.log('in deleteCabinConfirm', id);
+  swal({
+  title: "Are you sure?",
+  text: "Once deleted, you will not be able to recover this list!",
+  icon: "warning",
+  buttons: true,
+  dangerMode: true,
+  closeOnClickOutside: true,
+})
+.then(function(response){
+  console.log(response, 'swal delete');
+  if(response){
+    console.log('in if true');
+    self.deleteList(id);
+    swal("List Successfuly Deleted")
+    }else{
+        swal("Cancled Delete");
+        }
+      })
+}
+//end deleteCabinConfirm
+
+
+
+
+
+
+
 self.deleteList = function(cabinId){
-  if (confirm('Are you sure you want to Delete the list? This cannot be undone!')){
-    console.log('in delete confirm yes');
+
     $http({
       method: 'DELETE',
       url: `/list/delete/${cabinId}`
@@ -95,7 +124,7 @@ self.deleteList = function(cabinId){
     }).catch(function(error){
       console.log('error in delete list', error);
     })
-  }
+
 }
 //end deleteList
 

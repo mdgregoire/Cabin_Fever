@@ -18,6 +18,7 @@ myApp.controller('Opening_ListController',  ['UserService', 'ViewPropertyService
   self.showUpload = {show: false};
   self.clearList = ListService.clearList;
   self.getList(cabinId);
+  self.deleteListConfirm = ListService.deleteListConfirm;
   self.deleteList = ListService.deleteList;
   self.currentPath = $location.path();
 
@@ -32,8 +33,6 @@ myApp.controller('Opening_ListController',  ['UserService', 'ViewPropertyService
       console.log('success in op_clToggle', response);
       ViewPropertyService.displayProperty(cabinId).then($location.url('/opening_list'));
       $route.reload();
-
-      // $route.reload();
       }).catch(function(error){
       console.log('error in op_clToggle', error);
     })
@@ -61,7 +60,7 @@ myApp.controller('Opening_ListController',  ['UserService', 'ViewPropertyService
                                  evt.loaded / evt.total));
     });
     }
-    alert('File Uploaded!');
+    swal({text: ".csvFile Successfuly Uploaded!"})
     self.showUpload.show = false;
     $location.path("/property");
   }

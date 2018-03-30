@@ -22,7 +22,7 @@
 
     <div ng-show="{{vm.list.array}}">
       <button ng-click="vm.clearList(vm.displayCabin.cabin[0].id, vm.cabinOpenState)">Clear List</button>
-      <button ng-click="vm.deleteList(vm.displayCabin.cabin[0].id)">Delete List</button>
+      <button ng-click="vm.deleteListConfirm(vm.displayCabin.cabin[0].id)">Delete List</button>
       <button ng-show="vm.readyToToggle.toggle" ng-click="vm.op_clToggle(vm.displayCabin.cabin[0].id, vm.cabinOpenState)">Toggle Open/Closed</button>
 
     </div>
