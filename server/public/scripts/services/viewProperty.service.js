@@ -37,23 +37,25 @@ self.getCabins = function (id) {
 }
 //end property get
 
+//this uses sweet alerts to create a confirm window fo delete cabin
 self.deleteCabinConfirm = function (id){
   console.log('in deleteCabinConfirm', id);
   swal({
   title: "Are you sure?",
-  text: "Once deleted, you will not be able to recover this imaginary file!",
+  text: "Once deleted, you will not be able to recover this property!",
   icon: "warning",
   buttons: true,
   dangerMode: true,
+  closeOnClickOutside: true,
 })
 .then(function(response){
   console.log(response, 'swal delete');
   if(response){
     console.log('in if true');
     self.deleteCabin(id);
-    swal("Poof! Cabin is gone.", {icon: "success",})
+    swal("Property Successfuly Deleted")
     }else{
-        swal("Cabin is Safe");
+        swal("Cancled Delete");
         }
       })
 }

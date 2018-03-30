@@ -1,5 +1,5 @@
 <div class=" text-center col-md-3" id="actionBox">
-  <h2>{{vm.displayCabin.cabin[0].property_name}}</h2>
+  <h5>{{vm.displayCabin.cabin[0].property_name}}</h5>
 
     <div class = "boxed">
       <p><a href="#!chore">Chores</a></p>
@@ -12,12 +12,6 @@
     </div>
     <br>
     <br>
-    <!-- <div class = "boxed">
-      <p><a href="#!property">Start Visit</a></p>
-    </div> -->
-    <!-- <div class = "boxed">
-      <p><a href="#!calendar">Book Visit</a></p>
-    </div> -->
     <div ng-if="vm.currentPath =='/chore'" id="addChore">
       <div class="row">
         <label class="addChoreLabel" for="choreName">Chore:</label>
