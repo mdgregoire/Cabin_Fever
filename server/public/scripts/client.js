@@ -69,13 +69,6 @@ myApp.config(['$routeProvider', '$locationProvider', function($routeProvider, $l
     })
     .when('/user', {
       redirectTo: 'view_property'
-      // templateUrl: '/views/templates/viewProperty.html',
-      // controller: 'PropertyController as vm',
-      // resolve: {
-      //   getuser : function(UserService){
-      //     return UserService.getuser();
-      //   }
-      // }
     })
     .when('/info', {
       templateUrl: '/views/templates/info.html',
@@ -89,7 +82,5 @@ myApp.config(['$routeProvider', '$locationProvider', function($routeProvider, $l
     .otherwise({
       template: '<h1>404</h1>'
     });
-
-
 
 }]);

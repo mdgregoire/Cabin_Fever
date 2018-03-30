@@ -37,6 +37,28 @@ self.getCabins = function (id) {
 }
 //end property get
 
+self.deleteCabinConfirm = function (id){
+  console.log('in deleteCabinConfirm', id);
+  swal({
+  title: "Are you sure?",
+  text: "Once deleted, you will not be able to recover this imaginary file!",
+  icon: "warning",
+  buttons: true,
+  dangerMode: true,
+})
+.then(function(response){
+  console.log(response, 'swal delete');
+  if(response){
+    console.log('in if true');
+    self.deleteCabin(id);
+    swal("Poof! Cabin is gone.", {icon: "success",})
+    }else{
+        swal("Cabin is Safe");
+        }
+      })
+}
+//end deleteCabinConfirm
+
 //this deletes the selected cabin from the db
 self.deleteCabin = function(id){
   console.log('in deleteCabin', id);
@@ -77,7 +99,7 @@ self.editCabin = function (cabinToEdit) {
     data: cabinToEdit
   }).then(function(response){
     console.log('success in edit', response);
-    
+
     self.showEditCabin(id, true);
     self.getCabins(self.userId);
   }).catch(function(error){

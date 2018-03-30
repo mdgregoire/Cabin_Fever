@@ -260,3 +260,10 @@ form .progress {
     background: orange;
     width: 0;
 }
+
+
+/* sweetalerts styling */
+
+.swal-overlay {
+  background-color: rgba(43, 165, 137, 0.45);
+}

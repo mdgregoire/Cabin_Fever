@@ -16,6 +16,7 @@ myApp.controller('PropertyController', ['UserService', 'ViewPropertyService', 'A
   self.displayCabin = ViewPropertyService.displayCabin;
 
   self.deleteCabin = ViewPropertyService.deleteCabin;
+  self.deleteCabinConfirm = ViewPropertyService.deleteCabinConfirm;
   self.showEditCabin = ViewPropertyService.showEditCabin;
   self.editProperty = ViewPropertyService.editCabin;
 

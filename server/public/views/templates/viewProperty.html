@@ -14,7 +14,8 @@
         </div>
         <div class="panel-footer">
           <btn ng-hide={{cabin.is_edit}} class="btn-xs btn-warning" ng-click="vm.showEditCabin(cabin.id, cabin.is_edit)">Edit Cabin</btn>
-          <btn ng-click="vm.deleteCabin(cabin.id)" class="btn-warning btn-xs" >Delete Cabin</btn>
+          <btn ng-click="vm.deleteCabinConfirm(cabin.id)" class="btn-warning btn-xs" >Delete Cabin</btn>
+
           <form ng-show={{cabin.is_edit}}>
           <input ng-model=cabin.property_name type="text" name="nickname"/>
           <input ng-model=cabin.property_location type="text" name="address"/>
@@ -82,4 +83,6 @@
   <div class="row">
     <div ng-include="'views/partials/addCabin.html'"></div>
   </div>
+
+
 </div>
