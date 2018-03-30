@@ -1,10 +1,12 @@
 
 <div id="home" class="container fill">
-
-        <a class="homeLink" ng-click="vm.showLogin(vm.showLoginToggle.toggle)">Login</a>
-        <a class="homeLink" href="#!register">Register</a>
-        <!-- <p>{{vm.showLoginToggle.toggle}}</p> -->
+  <a class="homeLink" ng-click="vm.showLogin(vm.showLoginToggle.toggle)">Login</a>
+  <a class="homeLink" ng-click="vm.showRegister(vm.showRegisterToggle.toggle)">Register</a>
 
   <div ng-show="vm.showLoginToggle.toggle">
     <div  ng-include="'/views/partials/login.html'"></div>
+  </div>
+  <div ng-show="vm.showRegisterToggle.toggle">
+    <div  ng-include="'/views/partials/register.html'"></div>
+  </div>
 </div>

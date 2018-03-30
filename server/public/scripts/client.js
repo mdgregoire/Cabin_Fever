@@ -11,10 +11,10 @@ myApp.config(['$routeProvider', '$locationProvider', function($routeProvider, $l
       templateUrl: '/views/templates/home.html',
       controller: 'LoginController as vm',
     })
-    .when('/register', {
-      templateUrl: '/views/templates/register.html',
-      controller: 'LoginController as vm'
-    })
+    // .when('/register', {
+    //   templateUrl: '/views/templates/register.html',
+    //   controller: 'LoginController as vm'
+    // })
     .when('/view_property', {
       templateUrl: '/views/templates/viewProperty.html',
       controller: 'PropertyController as vm',

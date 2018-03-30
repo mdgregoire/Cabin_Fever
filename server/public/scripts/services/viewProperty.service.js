@@ -77,6 +77,7 @@ self.editCabin = function (cabinToEdit) {
     data: cabinToEdit
   }).then(function(response){
     console.log('success in edit', response);
+    
     self.showEditCabin(id, true);
     self.getCabins(self.userId);
   }).catch(function(error){

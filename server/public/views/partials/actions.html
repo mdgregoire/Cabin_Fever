@@ -32,26 +32,26 @@
       </div>
     </div>
 
-          <button id="uploadToggle" ng-if="vm.currentPath =='/opening_list' " ng-click="vm.uploadToggle()" >Upload File?</button>
-              <div ng-show="vm.showUpload.show" class="upload">
-                <div>
-                <h4>Please select a .csv file to upload.</h4>
-                <button ng-click="vm.cancelUpload()" >Cancel</button>
-                <button type="file" ngf-select="vm.uploadFiles($file, $invalidFiles)"
-                        accept=".csv" ngf-max-size="100MB">
-                    Select File</button>
+    <button id="uploadToggle" ng-if="vm.currentPath =='/opening_list' " ng-click="vm.uploadToggle()" >Upload File?</button>
+        <div ng-show="vm.showUpload.show" class="upload">
+          <div>
+          <h4>Please select a .csv file to upload.</h4>
+          <button ng-click="vm.cancelUpload()" >Cancel</button>
+          <button type="file" ngf-select="vm.uploadFiles($file, $invalidFiles)"
+                  accept=".csv" ngf-max-size="100MB">
+              Select File</button>
 
-                <div style="font:smaller">{{vm.f.name}} {{vm.errFile.name}} {{vm.errFile.$error}} {{vm.errFile.$errorParam}}
-                    <span class="progress" ng-show="vm.f.progress >= 0">
-                        <div style="width:{{vm.f.progress}}%"
-                             ng-bind="vm.f.progress + '%'"></div>
-                    </span>
-                </div>
-                {{errorMsg}}
-              </div>
+          <div style="font:smaller">{{vm.f.name}} {{vm.errFile.name}} {{vm.errFile.$error}} {{vm.errFile.$errorParam}}
+              <span class="progress" ng-show="vm.f.progress >= 0">
+                  <div style="width:{{vm.f.progress}}%"
+                       ng-bind="vm.f.progress + '%'"></div>
+              </span>
+          </div>
+          {{errorMsg}}
+        </div>
 
 
-              <!-- ng-if="vm.currentPath =='/chore' -->
+        <!-- ng-if="vm.currentPath =='/chore' -->
 
 
 </div>

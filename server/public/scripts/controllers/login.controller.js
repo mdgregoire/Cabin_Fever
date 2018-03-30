@@ -5,15 +5,16 @@ myApp.controller('LoginController', ['$http', '$location', 'UserService', '$rout
       username: '',
       password: ''
     };
-    self.message = '';
+    // self.message = '';
     self.showLoginToggle = {toggle:false};
+    self.showRegisterToggle = {toggle:false};
 
 
 
     self.login = function () {
       console.log('in login');
       if (self.user.username === '' || self.user.password === '') {
-        self.message = "Enter your username and password!";
+        // self.message = "Enter your username and password!";
       } else {
         console.log('sending to server...', self.user);
         $http.post('/api/user/login', self.user).then(
@@ -36,11 +37,14 @@ myApp.controller('LoginController', ['$http', '$location', 'UserService', '$rout
 
     self.registerUser = function () {
       if (self.user.username === '' || self.user.password === '') {
-        self.message = "Choose a username and password!";
+        // self.message = "Choose a username and password!";
       } else {
         console.log('sending to server...', self.user);
         $http.post('/api/user/register', self.user).then(function (response) {
           console.log('success');
+          self.showLoginToggle.toggle = true;
+          self.showRegisterToggle.toggle = false;
+
           $location.path('/home');
         },
           function (response) {
@@ -56,11 +60,23 @@ myApp.controller('LoginController', ['$http', '$location', 'UserService', '$rout
         self.showLoginToggle.toggle = false;
       } else{
         self.showLoginToggle.toggle = true;
-      }
-      // $location.url('/home');
+        self.showRegisterToggle.toggle = false;
 
+      }
     }
     //end showLogin
+
+    self.showRegister = function(toggle){
+      console.log('in showRegister', toggle);
+      if (toggle){
+        self.showRegisterToggle.toggle = false;
+      } else{
+        self.showRegisterToggle.toggle = true;
+        self.showLoginToggle.toggle = false;
+
+      }
+    }
+    //end showRegister
 
 
 }]);
