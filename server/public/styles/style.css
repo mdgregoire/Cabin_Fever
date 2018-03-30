@@ -70,6 +70,7 @@ h5 {
   margin: 10px;
   margin-left: 50px;
   border-radius: 5px;
+  overflow: visible;
 }
 
 
@@ -134,6 +135,8 @@ float: left;
 
 #choreUL{
   padding: 30px;
+  overflow: visible;
+
 }
 
 .listItem{
@@ -319,4 +322,8 @@ form .progress {
 p{
   padding: 0px;
   margin: 0px;
+}
+
+uib-tooltip {
+  z-index: 3000;
 }
