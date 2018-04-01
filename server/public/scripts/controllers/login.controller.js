@@ -11,24 +11,23 @@ myApp.controller('LoginController', ['$http', '$location', 'UserService', '$rout
     self.showRegisterToggle = {toggle:false};
 
     self.login = function () {
-      console.log('in login');
+      if(debug){console.log('in login');}
       if (self.user.username === '' || self.user.password === '') {
-        // self.message = "Enter your username and password!";
       } else {
-        console.log('sending to server...', self.user);
+        if(debug){console.log('sending to server...', self.user);}
         $http.post('/api/user/login', self.user).then(
           function (response) {
             if (response.status == 200) {
-              console.log('success: ', response.data);
+              if(debug){console.log('success: ', response.data);}
               // location works with SPA (ng-route)
               $location.path('/user');
             } else {
-              console.log('failure error: ', response);
+              if(debug){console.log('failure error: ', response);}
               self.message = "Incorrect credentials. Please try again.";
             }
           },
           function (response) {
-            console.log('failure error: ', response);
+            if(debug){console.log('failure error: ', response);}
             self.message = "Incorrect credentials. Please try again.";
           });
       }
@@ -36,37 +35,36 @@ myApp.controller('LoginController', ['$http', '$location', 'UserService', '$rout
 
     self.registerUser = function () {
       if (self.user.username === '' || self.user.password === '') {
-        // self.message = "Choose a username and password!";
       } else {
-        console.log('sending to server...', self.user);
+        if(debug){console.log('sending to server...', self.user);}
         $http.post('/api/user/register', self.user).then(function (response) {
-          console.log('success');
+          if(debug){console.log('success');}
           self.showLoginToggle.toggle = true;
           self.showRegisterToggle.toggle = false;
-
           $location.path('/home');
         },
           function (response) {
-            console.log('error');
-            self.message = "Something went wrong. Please try again."
+            if(debug){console.log('error');}
+            // self.message = "Something went wrong. Please try again."
           });
       }
     }
 
+
+//These 2 functions toggle between showing the partial for login or the partial for register
     self.showLogin = function(toggle){
-      console.log('in showLogin', toggle);
+      if(debug){console.log('in showLogin', toggle);}
       if (toggle){
         self.showLoginToggle.toggle = false;
       } else{
         self.showLoginToggle.toggle = true;
         self.showRegisterToggle.toggle = false;
-
       }
     }
     //end showLogin
 
     self.showRegister = function(toggle){
-      console.log('in showRegister', toggle);
+      if(debug){console.log('in showRegister', toggle);}
       if (toggle){
         self.showRegisterToggle.toggle = false;
       } else{

@@ -12,7 +12,6 @@ const uploadRouter = require('./routes/upload.router');
 const listRouter = require('./routes/list.router')
 const choreRouter = require('./routes/chore.router')
 
-
 // Body parser middleware
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
