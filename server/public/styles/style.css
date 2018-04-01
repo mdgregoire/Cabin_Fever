@@ -6,7 +6,6 @@ body, html, main {
   height: 100%;
 }
 
-
 h1 {
   font-family: 'Cabin Sketch', cursive;
   margin: 0;
@@ -123,6 +122,8 @@ h5 {
   background-color: white;
   border-radius: 5px;
   margin-bottom: 15px;
+  overflow: visible;
+
 }
 /*
 .uploadButton{
@@ -131,6 +132,8 @@ float: left;
 
 #listUL{
   padding: 30px;
+  overflow: visible;
+
 }
 
 #choreUL{

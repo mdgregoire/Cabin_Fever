@@ -5,6 +5,7 @@ myApp.controller('AddPropertyController', ['UserService', 'AddPropertyService', 
   self.userObject = UserService.userObject;
 
   self.upload = AddPropertyService.upload;
+
   self.addProperty = AddPropertyService.addProperty;
   self.newProperty = AddPropertyService.newProperty;
 

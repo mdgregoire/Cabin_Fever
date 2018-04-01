@@ -9,8 +9,6 @@ myApp.controller('LoginController', ['$http', '$location', 'UserService', '$rout
     self.showLoginToggle = {toggle:false};
     self.showRegisterToggle = {toggle:false};
 
-
-
     self.login = function () {
       console.log('in login');
       if (self.user.username === '' || self.user.password === '') {
