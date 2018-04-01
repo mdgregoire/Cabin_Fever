@@ -19,14 +19,16 @@
           <label for ="task.task_name" tooltip-placement="top" uib-tooltip="{{task.task_notes}}" >{{task.task_name}}</label>
         </li>
       </ul>
+      <button id="toggleOPCL" ng-show="vm.readyToToggle.toggle" class="btn-xs btn-warning" ng-click="vm.op_clToggle(vm.displayCabin.cabin[0].id, vm.cabinOpenState)">Toggle Open/Closed</button>
+
     </div>
 <div class="container lowButtons">
   <div class="container col-md-3">
     <div class="row">
       <button ng-click="vm.clearList(vm.displayCabin.cabin[0].id, vm.cabinOpenState)" class="btn-xs btn-warning">Clear List</button>
       <button ng-click="vm.deleteListConfirm(vm.displayCabin.cabin[0].id)" class="btn-xs btn-warning">Delete List</button>
-      <button ng-show="vm.readyToToggle.toggle" class="btn-xs btn-warning" ng-click="vm.op_clToggle(vm.displayCabin.cabin[0].id, vm.cabinOpenState)">Toggle Open/Closed</button>
-      <button id="uploadToggle" ng-if="vm.currentPath =='/opening_list'" class="btn-xs btn-warning" ng-click="vm.uploadToggle()" >Upload a .csv File?</button>
+      <button id="uploadToggle" ng-if="vm.currentPath =='/list'" class="btn-xs btn-warning" ng-click="vm.uploadToggle()" >Upload a .csv File?</button>
+
     </div>
   </div>
 

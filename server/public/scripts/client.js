@@ -11,10 +11,6 @@ myApp.config(['$routeProvider', '$locationProvider', function($routeProvider, $l
       templateUrl: '/views/templates/home.html',
       controller: 'LoginController as vm',
     })
-    // .when('/register', {
-    //   templateUrl: '/views/templates/register.html',
-    //   controller: 'LoginController as vm'
-    // })
     .when('/view_property', {
       templateUrl: '/views/templates/viewProperty.html',
       controller: 'PropertyController as vm',
@@ -54,8 +50,8 @@ myApp.config(['$routeProvider', '$locationProvider', function($routeProvider, $l
       templateUrl: '/views/templates/calendar.html',
       controller: 'CalendarController as vm'
     })
-    .when('/opening_list', {
-      templateUrl: '/views/templates/opening_list.html',
+    .when('/list', {
+      templateUrl: '/views/templates/list.html',
       controller: 'Opening_ListController as vm',
       resolve: {
         getuser : function(UserService){
@@ -63,10 +59,10 @@ myApp.config(['$routeProvider', '$locationProvider', function($routeProvider, $l
         }
       }
     })
-    .when('/closing_list', {
-      templateUrl: '/views/templates/closing_list.html',
-      controller: 'Closing_ListController as vm'
-    })
+    // .when('/closing_list', {
+    //   templateUrl: '/views/templates/closing_list.html',
+    //   controller: 'Closing_ListController as vm'
+    // })
     .when('/user', {
       redirectTo: 'view_property'
     })
