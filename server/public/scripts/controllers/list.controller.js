@@ -1,4 +1,4 @@
-myApp.controller('Opening_ListController',  ['UserService', 'ViewPropertyService', 'ListService', 'Upload', '$timeout', '$location', '$http', '$route',
+myApp.controller('ListController',  ['UserService', 'ViewPropertyService', 'ListService', 'Upload', '$timeout', '$location', '$http', '$route',
   function(UserService, ViewPropertyService, ListService, Upload, $timeout, $location, $http, $route) {
   console.log('Opening_ListController created');
   var self = this;

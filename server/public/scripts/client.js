@@ -20,10 +20,6 @@ myApp.config(['$routeProvider', '$locationProvider', function($routeProvider, $l
         }
       }
     })
-    .when('/add_property', {
-      templateUrl: '/views/templates/addProperty.html',
-      controller: 'AddPropertyController as vm'
-    })
     .when('/property', {
       templateUrl: '/views/templates/property.html',
       controller: 'PropertyController as vm',
@@ -46,37 +42,19 @@ myApp.config(['$routeProvider', '$locationProvider', function($routeProvider, $l
       templateUrl: '/views/templates/about.html',
       controller: 'AboutController as vm'
     })
-    .when('/calendar', {
-      templateUrl: '/views/templates/calendar.html',
-      controller: 'CalendarController as vm'
-    })
     .when('/list', {
       templateUrl: '/views/templates/list.html',
-      controller: 'Opening_ListController as vm',
+      controller: 'ListController as vm',
       resolve: {
         getuser : function(UserService){
           return UserService.getuser();
         }
       }
     })
-    // .when('/closing_list', {
-    //   templateUrl: '/views/templates/closing_list.html',
-    //   controller: 'Closing_ListController as vm'
-    // })
     .when('/user', {
       redirectTo: 'view_property'
-    })
-    .when('/info', {
-      templateUrl: '/views/templates/info.html',
-      controller: 'InfoController as vm',
-      resolve: {
-        getuser : function(UserService){
-          return UserService.getuser();
-        }
-      }
     })
     .otherwise({
       template: '<h1>404</h1>'
     });
-
 }]);
