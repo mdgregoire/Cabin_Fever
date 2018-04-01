@@ -72,11 +72,10 @@ h5 {
   overflow: visible;
 }
 
-
-
 .panel-footer {
   padding-bottom: 5px;
 }
+
 .panel-body {
   padding-bottom: 5px;
 }
@@ -96,6 +95,10 @@ h5 {
 
 .addChoreLabel{
   margin: 5px;
+}
+
+label textarea {
+  vertical-align: top;
 }
 
 #login {
