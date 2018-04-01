@@ -1,13 +1,15 @@
-myApp.controller('ListController',  ['UserService', 'ViewPropertyService', 'ListService', 'Upload', '$timeout', '$location', '$http', '$route',
+myApp.controller('ListController',  ['UserService', 'ViewPropertyService', 'ListService',
+                                      'Upload', '$timeout', '$location', '$http', '$route',
   function(UserService, ViewPropertyService, ListService, Upload, $timeout, $location, $http, $route) {
-  console.log('Opening_ListController created');
-  var self = this;
+  let self = this;
+  let debug = false;
 
   self.userService = UserService;
   self.userObject = UserService.userObject;
+
   self.displayProperty = ViewPropertyService.displayProperty;
   self.displayCabin = ViewPropertyService.displayCabin;
-  let cabinId = self.displayCabin.cabin[0].id;
+  self.cabinId = self.displayCabin.cabin[0].id;
   self.cabinOpenState = self.displayCabin.cabin[0].op_cl;
   self.op_clToggle = ListService.op_clToggle;
   self.ListService = ListService;
@@ -17,24 +19,24 @@ myApp.controller('ListController',  ['UserService', 'ViewPropertyService', 'List
   self.clickList = ListService.clickList;
   self.showUpload = {show: false};
   self.clearList = ListService.clearList;
-  self.getList(cabinId);
+  self.getList(self.cabinId);
   self.deleteListConfirm = ListService.deleteListConfirm;
   self.deleteList = ListService.deleteList;
   self.currentPath = $location.path();
 
 //this toggles the open/closed state on the db for the selected cabin
   self.op_clToggle = function(id, op_cl) {
-    console.log('in op_clToggle', id, op_cl);
+    if(debug){console.log('in op_clToggle', id, op_cl);}
     $http({
       method: 'PUT',
       url: `property/toggle/${id}`,
       data: {data: op_cl}
     }).then(function(response){
-      console.log('success in op_clToggle', response);
-      ViewPropertyService.displayProperty(cabinId).then($location.url('/opening_list'));
+      if(debug){console.log('success in op_clToggle', response);}
+      ViewPropertyService.displayProperty(self.cabinId).then($location.url('/list'));
       $route.reload();
       }).catch(function(error){
-      console.log('error in op_clToggle', error);
+      if(debug){console.log('error in op_clToggle', error);}
     })
   }
   //end op_clToggle
@@ -45,7 +47,7 @@ myApp.controller('ListController',  ['UserService', 'ViewPropertyService', 'List
     self.errFile = errFiles && errFiles[0];
     if (file) {
       file.upload = Upload.upload({
-          url: `/upload/${cabinId}`,
+          url: `/upload/${self.cabinId}`,
           data: {file: file}
       });
     file.upload.then(function (response) {
@@ -73,5 +75,4 @@ self.uploadToggle = function(){
 self.cancelUpload = function(){
   self.showUpload.show = false;
 }
-
-}]);// end Opening_ListController
+}]);// end ListController

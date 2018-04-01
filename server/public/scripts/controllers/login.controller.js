@@ -1,11 +1,12 @@
-myApp.controller('LoginController', ['$http', '$location', 'UserService', '$route',  function($http, $location, UserService, $route) {
-    console.log('LoginController created');
-    var self = this;
+myApp.controller('LoginController', ['$http', '$location', 'UserService', '$route',
+                  function($http, $location, UserService, $route) {
+    let self = this;
+    let debug = false;
+
     self.user = {
       username: '',
       password: ''
     };
-    // self.message = '';
     self.showLoginToggle = {toggle:false};
     self.showRegisterToggle = {toggle:false};
 
@@ -71,10 +72,7 @@ myApp.controller('LoginController', ['$http', '$location', 'UserService', '$rout
       } else{
         self.showRegisterToggle.toggle = true;
         self.showLoginToggle.toggle = false;
-
       }
     }
     //end showRegister
-
-
 }]);
