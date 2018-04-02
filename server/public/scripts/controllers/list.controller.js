@@ -33,6 +33,7 @@ myApp.controller('ListController',  ['UserService', 'ViewPropertyService', 'List
       data: {data: op_cl}
     }).then(function(response){
       if(debug){console.log('success in op_clToggle', response);}
+      self.clearList(id, op_cl);
       ViewPropertyService.displayProperty(self.cabinId).then($location.url('/list'));
       $route.reload();
       }).catch(function(error){

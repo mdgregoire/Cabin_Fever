@@ -1,10 +1,10 @@
-# Name of Project
+# Cabin Fever
 
-One Paragraph of project description goes here. Link to the live version of the app if it's hosted on Heroku.
+I created this app to assist property owners with tracking tasks that need to be done on an annual basis.  The user can create and manage multiple properties (if needed) and personalize the properties by uploading a unique picture to help identify each location.  The app also allows a user to upload a list of opening and closing tasks in a .csv file which will then track the progression of those tasks throughout the year.  Additionally the user can create chores that need to be done on a short term basis within the application itself.
 
 ## Built With
 
-List technologies and frameworks here
+The application was built using the SEAN stack (SQL, Express, AngularJS, and Node.js).  I also used Bootstrap, Angular Animate, Passport, Multer, and NG-File-Upload.
 
 ## Getting Started
 
@@ -12,10 +12,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-Link to software that is required to install the app (e.g. node).
-
 - [Node.js](https://nodejs.org/en/)
-- List other prerequisites here
 
 
 ### Installing
@@ -30,13 +27,7 @@ CREATE TABLE "users" (
 );
 ```
 
-## Screen Shot
 
-Include one or two screen shots of your project here (optional). Remove if unused.
-
-## Documentation
-
-Link to a read-only version of your scope document or other relevant documentation here (optional). Remove if unused.
 
 ### Completed Features
 
