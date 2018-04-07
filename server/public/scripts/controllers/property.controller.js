@@ -1,6 +1,6 @@
 myApp.controller('PropertyController', ['UserService', 'ViewPropertyService', 'AddPropertyService',
                                   function(UserService, ViewPropertyService, AddPropertyService) {
-  var self = this;
+  let self = this;
 
   self.userService = UserService;
   self.userObject = UserService.userObject;
