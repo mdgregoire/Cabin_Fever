@@ -10,8 +10,8 @@ const sessionConfig = require('./modules/session-middleware');
 const userRouter = require('./routes/user.router');
 const propertyRouter = require('./routes/property.router');
 const uploadRouter = require('./routes/upload.router');
-const listRouter = require('./routes/list.router')
-const choreRouter = require('./routes/chore.router')
+const listRouter = require('./routes/list.router');
+const choreRouter = require('./routes/chore.router');
 
 // Body parser middleware
 app.use(bodyParser.json());
